@@ -13,7 +13,7 @@ body {
     min-height: 100vh;
 }
 
-/* 2. Login Card (Box) එකේ styling */
+
 .form-container {
     background-color: #ffffff;
     padding: 40px 30px;
@@ -30,7 +30,7 @@ body {
     font-size: 28px;
 }
 
-/* 3. Input fields සහ Labels styling */
+
 .form-container div {
     margin-bottom: 18px;
 }
@@ -59,7 +59,7 @@ input[type="password"]:focus {
     outline: none;
 }
 
-/* 4. Remember Me සහ Forgot Password කොටස */
+
 .action {
     display: flex;
     justify-content: space-between;
@@ -82,7 +82,7 @@ input[type="password"]:focus {
     text-decoration: underline;
 }
 
-/* 5. Submit Button styling */
+
 button[type="submit"] {
     width: 100%;
     padding: 12px;
