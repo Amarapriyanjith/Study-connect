@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Features</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Home🏠</title>
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 <header>
@@ -19,9 +19,9 @@
 
         <ul>
 
-            <li><a href="home.html">Home</a></li>
+            <li><a class="active"href="home.html">Home</a></li>
 
-            <li><a class="active" href="#">Features</a></li>
+            <li><a  href="features.html">Features</a></li>
 
             <li><a href="#">Browse Notes</a></li>
 
@@ -38,44 +38,59 @@
 </header>
 <section>
         <div class="hero">
-        <h1>Powerful Features For Students</h1>
-        <p class="one">Everything you need to learn, Shared and Succeed</p>
+        <h1>All The Resources<br>You Need to Succeed</h1>
+        <p class="one">Upload ,discover and share study notes with students like you.</p><br>
+
+  <!-- search bar create -->
+  <form class="search-box" action="/search" method="GET">
+  <input 
+    type="search" 
+    name="q" 
+    placeholder="Search for notes, subject, topics..." 
+    aria-label="Search for notes, subject, topics"
+  >
+  <button type="submit" aria-label="Submit Search">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+  </button>
+</form>
     </div>
 </section>
 
-<section class="Features">
+<section class="home">
         <div class="cards">
             <div class="img blue">
-                <img src="photos/cloud-upload (1).png" alt="upload" width="50px">
+                <img src="photos/maths.png" alt="Maths" width="50px">
             </div>
-            <h2>Upload & Share Notes</h2>
-            <p>Easily upload your study materials and share them with students.</p>
+            <h2>Mathematics For Technology</h2>
+            
 
          </div>
 
          <div class="cards">
             <div class="img yellow">
-                <img src="photos/star.png" alt="Discover" width="50px">
+                <img src="photos/machine learning.png" alt="Machine Learing" width="50px">
             </div>
-            <h2>Discover Quality Resources</h2>
-            <p>Browse thousands of high-quality notes uploaded by students.</p>
+            <h2>Machine Learning</h2>
+            
          </div>
 
          <div class="cards">
             <div class="img green">
-                <img src="photos/bookmark.png" alt="bookmark" width="50px">
+                <img src="photos/engineering.png" alt="Enginnering" width="50px">
             </div>
-            <h2>Save & Organize</h2>
-            <p>Save your favourite resources and access them anytime.</p>
+            <h2>Engineering</h2>
+            
         </div>
 
         <div class="cards">
             <div class="img purple">
-                <img src="photos/users-round.png" alt="User" width="50px">
+                <img src="photos/cyber security.png" alt="User" width="50px">
             </div>
-            <h2>Connect & Learn Together</h2>
-            <p>Rate, comment and connect with fellow students.</p>
-
+            <h2>Cyber Security</h2>
+            
         </div>
 
 
@@ -133,6 +148,3 @@
 
 </footer>
     
-
-</body>
-</html>
