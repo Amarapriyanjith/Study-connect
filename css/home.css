@@ -1,0 +1,259 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    }
+.body{
+    background:#f8fafc;
+    color:#1e293b;
+    line-height:1.6;
+}
+header{
+    width:100%;
+    height:80px;
+    background:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 80px;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    font-size:32px;
+    color:#2563eb;
+}
+
+.logo h2{
+    font-size:22px;
+    font-weight:700;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#334155;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    color:#2563eb;
+}
+
+.login-btn{
+    padding:10px 24px;
+    border:none;
+    border-radius:8px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+    font-size:15px;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    background:#1d4ed8;
+}
+
+.hero{
+    text-align:left;
+    padding:80px 20px;
+    background: linear-gradient(to right, #dbeafe, #ffffff);
+    
+}
+.hero h1{
+    font-weight: 700px;
+    margin-bottom: 15px;
+    font-size: 50px;
+}
+.hero p{
+    font-size: 20px;
+    color:#64748b;
+}
+.one{
+    font-size: 10px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #f1ecf6; /* Soft lavender/light purple tint */
+  border-radius: 50px;      /* Full pill shape */
+  padding: 8px 20px;
+  max-width: 450px;
+  width: 100%;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  flex: 1;
+  font-size: 0.95rem;
+  color: #333333;
+}
+
+/* Customizing the placeholder text */
+.search-box input::placeholder {
+  color: #726e7b;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.search-box button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  color: #55505e; /* Matching dark grayish-purple icon color */
+  transition: opacity 0.2s ease;
+}
+
+.search-box button:hover {
+  opacity: 0.7;
+}
+
+.home{
+    width:1200px;
+    max-width:95%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    padding-bottom:80px;
+}
+
+.cards{
+    background:#fff;
+    border-radius:20px;
+    padding:40px 30px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    transition:.3s;
+}
+.cards:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+.img{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    margin-bottom:25px;
+}   
+.img img{
+    font-size:42px;
+}
+.blue{
+    background:#e0ecff;
+}
+.blue img{
+    color:#3b82f6;
+}
+
+.yellow{
+    background:#fff4cc;
+}
+
+.yellow img{
+    color:#facc15;
+}
+
+.green{
+    background:#dcfce7;
+}
+
+.green img{
+    color:#22c55e;
+}
+
+.purple{
+    background:#ede9fe;
+}
+
+.purple img{
+    color:#8b5cf6;
+}
+
+.cards h2{
+    font-size:23px;
+    margin-bottom:15px;
+}
+
+.cards p{
+    color:#64748b;
+    font-size:15px;
+}
+
+footer{
+    background:#1e293b;
+    color:white;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:40px;
+    padding:60px 80px;
+}
+
+.footer-col h3{
+    margin-bottom:18px;
+}
+
+.footer-col p{
+    color:#cbd5e1;
+}
+
+.footer-col a{
+    display:block;
+    color:#cbd5e1;
+    text-decoration:none;
+    margin-bottom:10px;
+    transition:.3s;
+}
+
+.footer-col a:hover{
+    color:white;
+}
+
+.footer-col input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    margin-bottom:12px;
+}
+
+.footer-col button{
+    width:100%;
+    padding:12px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.footer-col button:hover{
+    background:#1d4ed8;
+}
