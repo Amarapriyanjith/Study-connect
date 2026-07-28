@@ -78,13 +78,11 @@ nav ul li a.active{
     
 }
 .hero h1{
-    padding-left:45px;
     font-weight: 700px;
     margin-bottom: 15px;
     font-size: 50px;
 }
 .hero p{
-    padding-left:45px;
     font-size: 20px;
     color:#64748b;
 }
@@ -93,18 +91,16 @@ nav ul li a.active{
 }
 
 .search-box {
-  margin-left:45px;
   display: flex;
   align-items: center;
-  background-color: #d1e5f7; /* Soft lavender/light purple tint */
-  border-radius: 50px;      /* Full pill shape */
+  background-color: #d1e5f7;
+  border-radius: 50px;      
   padding: 8px 20px;
   max-width: 450px;
   width: 100%;
 }
 
 .search-box input {
-  
   border: none;
   background: transparent;
   outline: none;
@@ -123,7 +119,7 @@ nav ul li a.active{
   background: none;
   border: none;
   cursor: pointer;
-
+  padding: 0;
   display: flex;
   align-items: center;
   color: #666464; /* Matching dark grayish-purple icon color */
@@ -135,30 +131,50 @@ nav ul li a.active{
 }
 
 
-.home{
-    width:1200px;
-    max-width:95%;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:30px;
-    padding-bottom:80px;
+
+
+.home {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px; 
+    width: 1200px;
+    max-width: 95%;
+    margin: auto;
+    padding-bottom: 80px;
+   
 }
 
-.cards{
-    position: relative; /* z-index වැඩ කිරීමට position එකක් තිබිය යුතුය */
-    z-index: 10;
-    background:#fff;
-    border-radius:20px;
-    padding:40px 30px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.06);
-    transition:.3s;
+
+.sidebar {
+    width: 260px;
+    flex-shrink: 0; 
 }
-.cards:hover{
-    transform:translateY(-8px);
-    box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+
+.cards-grid {
+    flex-grow: 1; 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
 }
+
+
+.cards {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    transition: 0.3s;
+}
+
+.cards:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+
 .img{
     width:90px;
     height:90px;
@@ -213,54 +229,93 @@ nav ul li a.active{
     font-size:15px;
 }
 
-footer{
-    background:#1e293b;
-    color:white;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:40px;
-    padding:60px 80px;
+
+
+
+/* Sidebar (filter section) */
+.filter-sidebar {
+  flex-shrink: 0;
+  width: 250px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.footer-col h3{
-    margin-bottom:18px;
+.filter-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 15px;
 }
 
-.footer-col p{
-    color:#cbd5e1;
+/* Accordion Header */
+.filter-group {
+  margin-bottom: 15px;
 }
 
-.footer-col a{
-    display:block;
-    color:#cbd5e1;
-    text-decoration:none;
-    margin-bottom:10px;
-    transition:.3s;
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #222;
+  cursor: pointer;
+  padding: 6px 0;
 }
 
-.footer-col a:hover{
-    color:white;
+.toggle-arrow {
+  font-size: 0.75rem;
+  color: #555;
+  transition: transform 0.3s ease;
 }
 
-.footer-col input{
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:8px;
-    margin-bottom:12px;
+/* Collapsible Content */
+.filter-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+  transition: all 0.3s ease;
 }
 
-.footer-col button{
-    width:100%;
-    padding:12px;
-    background:#2563eb;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    transition:.3s;
+.filter-group.collapsed .filter-content {
+  display: none;
 }
 
-.footer-col button:hover{
-    background:#1d4ed8;
+.filter-group.collapsed .toggle-arrow {
+  transform: rotate(180deg);
+}
+
+/* Checkbox Styling */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: #444;
+  cursor: pointer;
+}
+
+.checkbox-container input {
+  width: 16px;
+  height: 16px;
+  accent-color: #2b6be5; /* Modern blue matching your UI button */
+  cursor: pointer;
+}
+
+
+
+#ratingRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #2b6be5;
+  cursor: pointer;
+  box-shadow: 0 0 0 3px #ffffff, 0 2px 4px rgba(0,0,0,0.2);
 }
