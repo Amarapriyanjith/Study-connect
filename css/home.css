@@ -156,6 +156,7 @@ nav ul li a.active{
     transition:.3s;
 }
 .cards:hover{
+    color: black;
     transform:translateY(-8px);
     box-shadow:0 20px 40px rgba(0,0,0,.12);
 }
@@ -203,7 +204,12 @@ nav ul li a.active{
     color:#8b5cf6;
 }
 
+/*card style changes*/
+
 .cards h2{
+    
+    text-decoration: none; 
+    color: black;   
     font-size:23px;
     margin-bottom:15px;
 }
@@ -211,6 +217,10 @@ nav ul li a.active{
 .cards p{
     color:#64748b;
     font-size:15px;
+}
+
+.cards:visited {
+    color: black;         
 }
 
 footer{
@@ -264,3 +274,11 @@ footer{
 .footer-col button:hover{
     background:#1d4ed8;
 }
+/* card link click system change*/
+
+
+
+
+
+
+

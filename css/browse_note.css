@@ -219,7 +219,12 @@ nav ul li a.active{
     color:#8b5cf6;
 }
 
+/*card style changes*/
+
 .cards h2{
+    
+    text-decoration: none; 
+    color: black;   
     font-size:23px;
     margin-bottom:15px;
 }
@@ -229,7 +234,9 @@ nav ul li a.active{
     font-size:15px;
 }
 
-
+.cards:visited {
+    color: black;         
+}
 
 
 /* Sidebar (filter section) */
@@ -324,3 +331,4 @@ nav ul li a.active{
 .filter-main{
     display: flex;
 }
+
