@@ -22,7 +22,12 @@
     font-family:'Poppins',sans-serif;
     }
 
+<<<<<<< HEAD
+
+    /*  navigation bar css */ 
+=======
 /*  navigation bar css */ 
+>>>>>>> 2db39db37e8d6a25c368c7cd4cefa9b529d0703a
 
 .navbar {
   width: 100%;
@@ -447,19 +452,23 @@ a {
 
 
 
+<<<<<<< HEAD
+/*  Footer on desktop */
+=======
 
 
 
 
 
 /* ---------- FIX: Footer on desktop (base CSS had 1 column) ---------- */
+>>>>>>> 2db39db37e8d6a25c368c7cd4cefa9b529d0703a
 footer {
     grid-template-columns: repeat(4, 1fr);
 }
 
-/* ---------- TABLET (max-width: 1024px) ---------- */
+/*  TABLET (max-width: 1024px) */
 @media screen and (max-width: 1024px) {
-    /* ----- Header ----- */
+    /* Header  */
     header {
         padding: 0 30px;
     }
@@ -472,7 +481,7 @@ footer {
         font-size: 18px;
     }
 
-    /* ----- Hero ----- */
+    /*  Hero */
     .hero {
         padding: 60px 20px;
     }
@@ -489,7 +498,7 @@ footer {
         max-width: 400px;
     }
 
-    /* ----- Cards: 2 columns ----- */
+    /* Cards: 2 columns */
     .home {
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
@@ -503,7 +512,7 @@ footer {
         font-size: 20px;
     }
 
-    /* ----- Footer: 2 columns ----- */
+    /*  Footer:  columns  2 */
     footer {
         grid-template-columns: repeat(2, 1fr);
         padding: 50px 40px;
