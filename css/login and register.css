@@ -224,3 +224,149 @@ body{
 .signup a:hover{
     text-decoration:underline;
 }
+/* Tablets */
+
+@media(max-width:768px){
+
+    body{
+        padding:20px;
+    }
+
+
+    .login-container,
+    .register-container{
+        width:420px;
+        padding:35px;
+    }
+
+
+    .tabs button{
+        font-size:16px;
+    }
+
+
+    .form-group input{
+        padding:13px;
+    }
+
+}
+
+
+
+/* Mobile Phones */
+
+@media(max-width:480px){
+
+    body{
+        padding:15px;
+        align-items:center;
+    }
+
+
+    .login-container,
+    .register-container{
+        width:100%;
+        padding:25px 20px;
+        border-radius:15px;
+    }
+
+
+    .tabs{
+        gap:10px;
+        margin-bottom:25px;
+    }
+
+
+    .tabs button{
+        padding:12px;
+        font-size:14px;
+    }
+
+
+    .form-group{
+        margin-bottom:18px;
+    }
+
+
+    .form-group label{
+        font-size:14px;
+    }
+
+
+    .form-group input{
+        padding:12px;
+        font-size:14px;
+    }
+
+
+    .password-title a{
+        font-size:12px;
+    }
+
+
+    .login-btn,
+    .register-btn{
+        padding:13px;
+        font-size:15px;
+    }
+
+
+    .divider{
+        margin:25px 0;
+        font-size:14px;
+    }
+
+
+    .divider::before,
+    .divider::after{
+        width:28%;
+    }
+
+
+    .social-login{
+        flex-direction:column;
+        gap:12px;
+    }
+
+
+    .social-login button{
+        width:100%;
+        padding:10px;
+    }
+
+
+    .social-login img{
+        width:28px;
+        height:28px;
+    }
+
+
+    .signup{
+        font-size:14px;
+        margin-top:25px;
+    }
+
+}
+
+
+
+/* Very Small Phones */
+
+@media(max-width:320px){
+
+    .login-container,
+    .register-container{
+        padding:20px 15px;
+    }
+
+
+    .tabs button{
+        font-size:13px;
+    }
+
+
+    .remember label{
+        font-size:13px;
+    }
+
+}

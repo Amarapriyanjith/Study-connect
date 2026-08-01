@@ -9,43 +9,52 @@
     <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
-    <header>
 
-    <div class="logo">
+     /* navigation bar /*
+<header>
+      <div class="navbar">
+        <div class="logo">
         <img src="photos/graduation-cap.png" alt="logo">
-        <h2>Study Connect</h2>
+        <h2>Student Resource Hub</h2>
     </div>
-
-    <nav>
-
-        <ul>
-
-            <li><a href="home.html">Home</a></li>
-
-            <li><a href="features.html">Features</a></li>
-
-            <li><a href="Browse Notes.html">Browse Notes</a></li>
-
-            <li><a href="about us.html">About Us</a></li>
-
-            <li><a class="active" href="#">Contact</a></li>
-
-        </ul>
-
-    </nav>
-    <div class="auth-buttons">
-
-    <button class="login-btn"
-            onclick="window.location.href='login page.html'">
-        Login
-    </button>
-
-    <button class="login-btn"
-            onclick="window.location.href='register.html'">
-        Register
-    </button>
-
-    </div>
+        <div class="navbar-links" id="navbar-links">
+          <ul>
+            <li>
+              <a href="home.html"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="features.html"
+                >Features</a
+              >
+            </li>
+            
+            <li>
+              <a href="Browse Notes.html"
+                >Browse Notes</a
+              >
+            </li>
+            <li>
+              <a href="about us.html"
+                >About</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                >Contact</a
+              >
+            </li>
+          </ul>
+          <div class="navbar-buttons">
+            <a href="login page.html"><button id="signup">Login</button></a>
+            <a href="register.html"><button id="login">Register</button></a>
+          </div>
+        </div>
+        <div class="menu-icon">
+          <img src="photos/menu.svg" alt="menu" id="menu-icon" />
+        </div>
+      </div>
 </header>
 <section class="hero1">
     <div class="hero-text">
@@ -56,6 +65,8 @@
         <img src="photos/pngtree-contact-us-icons-merged-into-composite-image-photo-image_29628458.jpg" alt="Hero section image" width="400px">
     </div>
 </section>
+
+ /* contact section/*
 <section class="contact-section">
      <div class="contact-form">
 
@@ -139,7 +150,27 @@
 
     </div>
 
+ /* footer /*
 </footer>
+<script>
+
+const nav_menu_icon = document.getElementById("menu-icon");
+const navbar_links = document.getElementById("navbar-links");
+
+nav_menu_icon.addEventListener("click",()=>{
+    
+    if(navbar_links.style.display == "block"){
+        navbar_links.style.display = "none";
+        nav_menu_icon.src = "photos/menu.svg";
+    }else{
+        navbar_links.style.display = "block";
+        nav_menu_icon.src = "photos/cancel.svg";
+        nav_menu_icon.style.width = "35px"
+        
+    }
+})
+
+</script>
 
     
 </body>

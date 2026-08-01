@@ -22,8 +22,12 @@
     font-family:'Poppins',sans-serif;
     }
 
+<<<<<<< HEAD
 
     /*  navigation bar css */ 
+=======
+/*  navigation bar css */ 
+>>>>>>> 2db39db37e8d6a25c368c7cd4cefa9b529d0703a
 
 .navbar {
   width: 100%;
@@ -43,14 +47,17 @@
   font-size:32px;
   color:#2563eb;
 }
-.logo h2{
-    font-size:22px;
-    font-weight:700;
-}
+
 .logo{
     display:flex;
     align-items:center;
     gap:12px;
+}
+
+
+.logo h2{
+    font-size:22px;
+    font-weight:700;
 }
 
 .navbar-links {
@@ -213,16 +220,6 @@
   }
 }
 
-
-
-
-
-
-.body{
-    background:#f8fafc;
-    color:#1e293b;
-    line-height:1.6;
-}
 
 .hero{
     text-align:left;
@@ -455,7 +452,16 @@ a {
 
 
 
+<<<<<<< HEAD
 /*  Footer on desktop */
+=======
+
+
+
+
+
+/* ---------- FIX: Footer on desktop (base CSS had 1 column) ---------- */
+>>>>>>> 2db39db37e8d6a25c368c7cd4cefa9b529d0703a
 footer {
     grid-template-columns: repeat(4, 1fr);
 }
@@ -523,9 +529,6 @@ footer {
         display: block;
     }
 }
-
-
-
 
 /* ---------- MOBILE (max-width: 600px) ---------- */
 @media screen and (max-width: 600px) {
@@ -716,3 +719,4 @@ footer {
         gap: 24px;
     }
 }
+

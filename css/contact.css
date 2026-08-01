@@ -115,3 +115,198 @@
     transform:translateY(-3px);
     box-shadow:0 12px 25px rgba(37,99,235,.35);
 }
+
+/* Tablet */
+@media (max-width:992px){
+
+.hero1{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:60px 30px;
+
+    gap:40px;
+
+}
+
+.hero-text h1{
+
+    font-size:40px;
+
+}
+
+.hero-text p{
+
+    font-size:17px;
+
+}
+
+.hero-img img{
+
+    width:320px;
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+.contact-section{
+
+    width:95%;
+
+}
+
+.contact-form{
+
+    width:100%;
+
+    padding:35px;
+
+}
+
+.contact-form h2{
+
+    font-size:34px;
+
+}
+
+}
+
+
+/* Mobile */
+@media (max-width:768px){
+
+.hero1{
+
+    padding:40px 20px;
+
+}
+
+.hero-text h1{
+
+    font-size:32px;
+
+}
+
+.hero-text p{
+
+    font-size:16px;
+
+}
+
+.hero-img img{
+
+    width:250px;
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+.contact-section{
+
+    margin:40px auto;
+
+}
+
+.contact-form{
+
+    padding:25px;
+
+}
+
+.contact-form h2{
+
+    font-size:28px;
+
+}
+
+.contact-form input,
+
+.contact-form select,
+
+.contact-form textarea{
+
+    font-size:15px;
+
+    padding:14px;
+
+}
+
+.contact-form textarea{
+
+    height:150px;
+
+}
+
+.contact-form button{
+
+    width:100%;
+
+}
+
+}
+
+
+/* Small Phones */
+@media (max-width:480px){
+
+.hero1{
+
+    padding:30px 15px;
+
+}
+
+.hero-text h1{
+
+    font-size:28px;
+
+}
+
+.hero-text p{
+
+    font-size:15px;
+
+}
+
+.hero-img img{
+
+    width:200px;
+
+}
+
+.contact-form{
+
+    padding:20px;
+
+    border-radius:15px;
+
+}
+
+.contact-form h2{
+
+    font-size:24px;
+
+}
+
+.contact-form label{
+
+    font-size:15px;
+
+}
+
+.contact-form input,
+
+.contact-form select,
+
+.contact-form textarea{
+
+    font-size:14px;
+
+}
+
+}

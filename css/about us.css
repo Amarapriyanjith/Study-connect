@@ -286,3 +286,319 @@
     transform:translateY(-4px);
     box-shadow:0 10px 20px rgba(0,0,0,.2);
 }
+
+/* Tablet */
+@media (max-width:992px){
+
+.hero2{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:60px 30px;
+
+    gap:40px;
+
+}
+
+
+.hero2 img{
+
+    width:260px;
+
+    height:260px;
+
+}
+
+
+.story-container{
+
+    flex-direction:column;
+
+    gap:40px;
+
+}
+
+
+.story h2{
+
+    font-size:36px;
+
+}
+
+
+.story-content{
+
+    text-align:center;
+
+}
+
+
+.story-content p{
+
+    font-size:17px;
+
+}
+
+
+.mission{
+
+    padding:70px 30px;
+
+}
+
+
+.why-us{
+
+    padding:70px 30px;
+
+}
+
+
+.team{
+
+    padding:70px 30px;
+
+}
+
+
+.cta{
+
+    width:95%;
+
+    padding:70px 25px;
+
+}
+
+
+.cta h2{
+
+    font-size:34px;
+
+}
+
+}
+
+
+/* Mobile */
+@media (max-width:768px){
+
+.hero2{
+
+    padding:40px 20px;
+
+}
+
+
+.hero2 h2{
+
+    font-size:30px;
+
+}
+
+
+.hero2 p{
+
+    font-size:16px;
+
+}
+
+
+.hero2 img{
+
+    width:220px;
+
+    height:220px;
+
+}
+
+
+.button{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+.btn{
+
+    width:220px;
+
+    text-align:center;
+
+    margin:0;
+
+}
+
+
+.story{
+
+    margin:60px auto;
+
+}
+
+
+.story h2{
+
+    font-size:30px;
+
+    margin-bottom:35px;
+
+}
+
+
+.story-image img{
+
+    max-width:100%;
+
+}
+
+
+.story-content p{
+
+    font-size:16px;
+
+}
+
+
+.mission h2,
+
+.why-us h2,
+
+.team h2,
+
+.cta h2{
+
+    font-size:30px;
+
+}
+
+
+.card,
+
+.feature-card,
+
+.member{
+
+    padding:25px 20px;
+
+}
+
+
+.card img,
+
+.feature-card img{
+
+    width:70px;
+
+    height:70px;
+
+}
+
+
+.member img{
+
+    width:120px;
+
+    height:120px;
+
+}
+
+
+.cta{
+
+    margin:50px auto;
+
+    padding:50px 20px;
+
+}
+
+
+.cta p{
+
+    font-size:16px;
+
+}
+
+}
+
+
+/* Small Phones */
+@media (max-width:480px){
+
+.hero2{
+
+    padding:30px 15px;
+
+}
+
+
+.hero2 h2{
+
+    font-size:26px;
+
+}
+
+
+.hero2 p{
+
+    font-size:15px;
+
+}
+
+
+.hero2 img{
+
+    width:180px;
+
+    height:180px;
+
+}
+
+
+.story h2,
+
+.mission h2,
+
+.why-us h2,
+
+.team h2,
+
+.cta h2{
+
+    font-size:26px;
+
+}
+
+
+.story-content p,
+
+.card p,
+
+.feature-card p,
+
+.member p,
+
+.cta p{
+
+    font-size:15px;
+
+}
+
+
+.btn{
+
+    width:100%;
+
+    max-width:220px;
+
+}
+
+}
