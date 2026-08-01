@@ -7,55 +7,72 @@
     <title>Home</title>
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/responsive.css">
+    
 </head>
 <body>
-<header>
 
-    <div class="logo">
+
+    <!--Navigation Bar-->
+
+    <header>
+      <div class="navbar">
+        <div class="logo">
         <img src="photos/graduation-cap.png" alt="logo">
-        <h2>Study Connect</h2>
+        <h2>Student Resource Hub</h2>
     </div>
+        <div class="navbar-links" id="navbar-links">
+          <ul>
+            <li>
+              <a class="active" href="#"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="features.html"
+                >Features</a
+              >
+            </li>
+            
+            <li>
+              <a href="Browse Notes.html"
+                >Browse Notes</a
+              >
+            </li>
+            <li>
+              <a href="about us.html"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a href="contact.html"
+                >Contact</a
+              >
+            </li>
+          </ul>
+          <div class="navbar-buttons">
+            <a href="login page.html"><button id="signup">Login</button></a>
+            <a href="register.html"><button id="login">Register</button></a>
+          </div>
+        </div>
+        <div class="menu-icon">
+          <img src="menu.svg" alt="menu" id="menu-icon" />
+        </div>
+      </div>
+    </header>
 
-    <nav>
 
-        <ul>
 
-            <li><a class="active"href="#">Home</a></li>
 
-            <li><a  href="features.html">Features</a></li>
 
-            <li><a href="Browse Notes.html">Browse Notes</a></li>
 
-            <li><a href="about us.html">About Us</a></li>
 
-            <li><a href="contact.html">Contact</a></li>
-
-        </ul>
-
-    </nav>
-
-    <div class="auth-buttons">
-
-    <button class="login-btn"
-            onclick="window.location.href='login page.html'">
-        Login
-    </button>
-
-    <button class="login-btn"
-            onclick="window.location.href='register.html'">
-        Register
-    </button>
-
-    </div>
-
-</header>
 <section>
         <div class="hero">
         <h1>All The Resources<br>You Need to Succeed</h1>
         <p class="one">Upload ,discover and share study notes with students like you.</p><br>
 
   <!-- search bar create -->
- <form class="search-box" action="/search" method="GET">
+  <form class="search-box" action="/search" method="GET"onsubmit="return false;">
   <input 
     type="search" 
     name="q" 
@@ -68,8 +85,6 @@
       <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
     </svg>
   </button>
-
-
 </form>
     </div>
 </section>
@@ -188,5 +203,26 @@
     </div>
 
 </footer>
+
+<script>
+
+const nav_menu_icon = document.getElementById("menu-icon");
+const navbar_links = document.getElementById("navbar-links");
+
+nav_menu_icon.addEventListener("click",()=>{
+    
+    if(navbar_links.style.display == "block"){
+        navbar_links.style.display = "none";
+        nav_menu_icon.src = "menu.svg";
+    }else{
+        navbar_links.style.display = "block";
+        nav_menu_icon.src = "cancel.svg";
+        nav_menu_icon.style.width = "35px"
+        
+    }
+})
+
+</script>
+    
 </body>
 </html>
