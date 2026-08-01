@@ -1,106 +1,104 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Features</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<header>
 
-    <div class="logo">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
         <img src="photos/graduation-cap.png" alt="logo">
         <h2>Student Resource Hub</h2>
-    </div>
-
-    <nav>
-
+      </div>
+      <div class="navbar-links" id="navbar-links">
         <ul>
+          <li>
+            <a href="home.html">Home</a>
+          </li>
+          <li>
+            <a class href="#">Features</a>
+          </li>
 
-            <li><a href="home.html">Home</a></li>
-
-            <li><a class="active" href="#">Features</a></li>
-
-            <li><a href="Browse Notes.html">Browse Notes</a></li>
-
-            <li><a href="about us.html">About Us</a></li>
-
-            <li><a href="contact.html">Contact</a></li>
-
+          <li>
+            <a href="Browse Notes.html">Browse Notes</a>
+          </li>
+          <li>
+            <a href="about us.html">About</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
         </ul>
-
-    </nav>
-    <div class="auth-buttons">
-
-    <button class="login-btn"
-            onclick="window.location.href='login page.html'">
-        Login
-    </button>
-
-    <button class="login-btn"
-            onclick="window.location.href='register.html'">
-        Register
-    </button>
-
-    </div>
-
-</header>
-<section>
-        <div class="hero">
-        <h1>Powerful Features For Students</h1>
-        <p class="one">Everything you need to learn, Shared and Succeed</p>
-    </div>
-</section>
-
-<section class="Features">
-        <div class="cards">
-            <div class="img blue">
-                <img src="photos/cloud-upload (1).png" alt="upload" width="50px">
-            </div>
-            <h2>Upload & Share Notes</h2>
-            <p>Easily upload your study materials and share them with students.</p>
-
-         </div>
-
-         <div class="cards">
-            <div class="img yellow">
-                <img src="photos/star.png" alt="Discover" width="50px">
-            </div>
-            <h2>Discover Quality Resources</h2>
-            <p>Browse thousands of high-quality notes uploaded by students.</p>
-         </div>
-
-         <div class="cards">
-            <div class="img green">
-                <img src="photos/bookmark.png" alt="bookmark" width="50px">
-            </div>
-            <h2>Save & Organize</h2>
-            <p>Save your favourite resources and access them anytime.</p>
+        <div class="navbar-buttons">
+          <a href="login page.html"><button id="signup">Login</button></a>
+          <a href="register.html"><button id="login">Register</button></a>
         </div>
+      </div>
+      <div class="menu-icon">
+        <img src="photos/menu.svg" alt="menu" id="menu-icon" />
+      </div>
+    </div>
+  </header>
+  <section>
+    <div class="hero">
+      <h1>Powerful Features For Students</h1>
+      <p class="one">Everything you need to learn, Shared and Succeed</p>
+    </div>
+  </section>
 
-        <div class="cards">
-            <div class="img purple">
-                <img src="photos/users-round.png" alt="User" width="50px">
-            </div>
-            <h2>Connect & Learn Together</h2>
-            <p>Rate, comment and connect with fellow students.</p>
+  <section class="Features">
+    <div class="cards">
+      <div class="img blue">
+        <img src="photos/cloud-upload (1).png" alt="upload" width="50px">
+      </div>
+      <h2>Upload & Share Notes</h2>
+      <p>Easily upload your study materials and share them with students.</p>
 
-        </div>
+    </div>
+
+    <div class="cards">
+      <div class="img yellow">
+        <img src="photos/star.png" alt="Discover" width="50px">
+      </div>
+      <h2>Discover Quality Resources</h2>
+      <p>Browse thousands of high-quality notes uploaded by students.</p>
+    </div>
+
+    <div class="cards">
+      <div class="img green">
+        <img src="photos/bookmark.png" alt="bookmark" width="50px">
+      </div>
+      <h2>Save & Organize</h2>
+      <p>Save your favourite resources and access them anytime.</p>
+    </div>
+
+    <div class="cards">
+      <div class="img purple">
+        <img src="photos/users-round.png" alt="User" width="50px">
+      </div>
+      <h2>Connect & Learn Together</h2>
+      <p>Rate, comment and connect with fellow students.</p>
+
+    </div>
 
 
-</section>
-<footer>
+  </section>
+  <footer>
 
     <div class="footer-col">
 
-        <h3>Student Resource Hub</h3>
+      <h3>Student Resource Hub</h3>
 
-        <p>
-            A platform for students to discover,
-            share and learn from quality resources.
-        </p>
+      <p>
+        A platform for students to discover,
+        share and learn from quality resources.
+      </p>
 
     </div>
 
@@ -108,25 +106,12 @@
 
     <div class="footer-col">
 
-        <h3>Quick Links</h3>
+      <h3>Quick Links</h3>
 
-        <a href="home.html">Home</a>
-        <a href="Browse Notes.html">Browse Notes</a>
-        <a href="#">Upload Notes</a>
-        <a href="about us.html">About Us</a>
-
-    </div>
-
-
-
-    <div class="footer-col">
-
-        <h3>Categories</h3>
-
-        <a href="#">Computer Science</a>
-        <a href="#">Mathematics</a>
-        <a href="#">Engineering</a>
-        <a href="#">Science</a>
+      <a href="home.html">Home</a>
+      <a href="Browse Notes.html">Browse Notes</a>
+      <a href="#">Upload Notes</a>
+      <a href="about us.html">About Us</a>
 
     </div>
 
@@ -134,16 +119,49 @@
 
     <div class="footer-col">
 
-        <h3>Newsletter</h3>
+      <h3>Categories</h3>
 
-        <input type="email" placeholder="Enter your email">
-
-        <button>Subscribe</button>
+      <a href="#">Computer Science</a>
+      <a href="#">Mathematics</a>
+      <a href="#">Engineering</a>
+      <a href="#">Science</a>
 
     </div>
 
-</footer>
+
+
+    <div class="footer-col">
+
+      <h3>Newsletter</h3>
+
+      <input type="email" placeholder="Enter your email">
+
+      <button>Subscribe</button>
+
+    </div>
+
+  </footer>
+<script>
+
+const nav_menu_icon = document.getElementById("menu-icon");
+const navbar_links = document.getElementById("navbar-links");
+
+nav_menu_icon.addEventListener("click",()=>{
     
+    if(navbar_links.style.display == "block"){
+        navbar_links.style.display = "none";
+        nav_menu_icon.src = "photos/menu.svg";
+    }else{
+        navbar_links.style.display = "block";
+        nav_menu_icon.src = "photos/cancel.svg";
+        nav_menu_icon.style.width = "35px"
+        
+    }
+})
+
+</script>
+
 
 </body>
+
 </html>
