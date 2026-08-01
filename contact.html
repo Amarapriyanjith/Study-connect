@@ -33,9 +33,19 @@
         </ul>
 
     </nav>
+    <div class="auth-buttons">
 
-    <button class="login-btn">Login</button>
+    <button class="login-btn"
+            onclick="window.location.href='login page.html'">
+        Login
+    </button>
 
+    <button class="login-btn"
+            onclick="window.location.href='register.html'">
+        Register
+    </button>
+
+    </div>
 </header>
 <section class="hero1">
     <div class="hero-text">
@@ -61,10 +71,12 @@
 
         <label>Subject</label>
         <select required>
+            <option>Programming</option>
             <option>Mathematics</option>
-            <option>Computer Science</option>
-            <option>Engineering</option>
-            <option>Science</option>
+            <option>Business</option>
+            <option>Multimedia</option>
+            <option>Networking</option>
+            <option>Database</option>
         </select>
 
         <label>Message</label>
