@@ -156,6 +156,7 @@ nav ul li a.active{
     transition:.3s;
 }
 .cards:hover{
+    
     color: black;
     transform:translateY(-8px);
     box-shadow:0 20px 40px rgba(0,0,0,.12);
@@ -277,7 +278,10 @@ footer{
 /* card link click system change*/
 
 
-
+a {
+    text-decoration: none; /* යටින් ඇති ඉර අයින් කිරීමට */
+    color: inherit;         /* ළඟම ඇති parent element එකේ පාට ලබා ගැනීමට */
+}
 
 
 

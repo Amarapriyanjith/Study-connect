@@ -172,6 +172,10 @@ nav ul li a.active{
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
+a {
+    text-decoration: none; 
+    color: inherit;        
+}
 
 
 
@@ -236,6 +240,10 @@ nav ul li a.active{
 
 .cards:visited {
     color: black;         
+}
+a {
+    text-decoration: none;
+    color: inherit;         
 }
 
 
@@ -310,7 +318,7 @@ nav ul li a.active{
 .checkbox-container input {
   width: 16px;
   height: 16px;
-  accent-color: #2b6be5; /* Modern blue matching your UI button */
+  accent-color: #2b6be5; 
   cursor: pointer;
 }
 
