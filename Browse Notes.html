@@ -9,46 +9,55 @@
     <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-<header>
 
-    <div class="logo">
+
+  <!--Navigation Bar-->
+
+    <header>
+      <div class="navbar">
+        <div class="logo">
         <img src="photos/graduation-cap.png" alt="logo">
         <h2>Student Resource Hub</h2>
     </div>
-
-    <nav>
-
-        <ul>
-
-            <li><a href="home.html">Home</a></li>
-
-            <li><a  href="features.html">Features</a></li>
-
-            <li><a class="active"href="#">Browse Notes</a></li>
-
-            <li><a href="about us.html">About Us</a></li>
-
-            <li><a href="contact.html">Contact</a></li>
-
-        </ul>
-
-    </nav>
-
-    <div class="auth-buttons">
-
-    <button class="login-btn"
-      onclick="window.location.href='login page.html'">
-      Login
-    </button>
-
-    <button class="login-btn"
-      onclick="window.location.href='register.html'">
-      Register
-    </button>
-
-    </div>
-
-</header>
+        <div class="navbar-links" id="navbar-links">
+          <ul>
+            <li>
+              <a href="home.html"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="features.html"
+                >Features</a
+              >
+            </li>
+            
+            <li>
+              <a href="#"
+                >Browse Notes</a
+              >
+            </li>
+            <li>
+              <a href="about us.html"
+                >About</a
+              >
+            </li>
+            <li>
+              <a href="contact.html"
+                >Contact</a
+              >
+            </li>
+          </ul>
+          <div class="navbar-buttons">
+            <a href="login page.html"><button id="signup">Login</button></a>
+            <a href="register.html"><button id="login">Register</button></a>
+          </div>
+        </div>
+        <div class="menu-icon">
+          <img src="photos/menu.svg" alt="menu" id="menu-icon" />
+        </div>
+      </div>
+    </header>
 
 
 
@@ -56,6 +65,8 @@
         <div class="hero">
         <h1>Explore Detailed Study Notes</h1>
         <p class="one">Find the resources you need for your subjects and topics.</p><br>
+
+
 
   <!-- search bar create -->
   <form class="search-box" action="/search" method="GET">
@@ -75,10 +86,13 @@
     </div>
 </section>
 
-<div class="filter-main">
-<!-- Make Filter bar -->
- 
 
+
+<!-- Make Filter bar -->
+<button class="filter-btn" onclick="toggleFilter()">
+    ☰ Filters
+</button>
+<div class="filter-main">
  <aside class="filter-sidebar">
     <h3 class="filter-title">Filter By</h3>
 
@@ -86,19 +100,21 @@
     <div class="filter-group">
       <div class="filter-header">
         <span>Subject</span>
-        
       </div>
+
       <div class="filter-content">
         <label class="checkbox-container">
           <input type="checkbox">
           <span class="checkmark"></span>
           Mathematics
         </label>
+
         <label class="checkbox-container">
           <input type="checkbox">
           <span class="checkmark"></span>
           Computer Science
         </label>
+
         <label class="checkbox-container">
           <input type="checkbox">
           <span class="checkmark"></span>
@@ -119,11 +135,13 @@
           <span class="checkmark"></span>
           Calculus
         </label>
+
         <label class="checkbox-container">
           <input type="checkbox">
           <span class="checkmark"></span>
           ML Algorithms
         </label>
+
         <label class="checkbox-container">
           <input type="checkbox">
           <span class="checkmark"></span>
@@ -133,12 +151,12 @@
     </div>
 
     <!-- Section 3: Course Level -->
-    <div class="filter-group">
-      <div class="filter-header">
+        <div class="filter-group">
+        <div class="filter-header">
         <span>Course Level</span>
         
-      </div>
-      <div class="filter-content">
+        </div>
+        <div class="filter-content">
         <label class="checkbox-container">
           <input type="checkbox">
           <span class="checkmark"></span>
@@ -154,7 +172,7 @@
     </div>
   </aside>
 
-  <script src="script.js"></script>
+
 
 
 
@@ -224,6 +242,8 @@
 
 </main>
 </div>
+
+/* footer section*/
 <footer>
 
     <div class="footer-col">
@@ -277,6 +297,7 @@
 
 </footer>
 
+/*resposive css for javascript section */
 <script>
 
 const nav_menu_icon = document.getElementById("menu-icon");
@@ -286,7 +307,7 @@ nav_menu_icon.addEventListener("click",()=>{
     
     if(navbar_links.style.display == "block"){
         navbar_links.style.display = "none";
-        nav_menu_icon.src = "photos/menu.svg";
+        nav_menu_icon.src = "photos/menu.svg";/*navigation button logo smart phone size page*/
     }else{
         navbar_links.style.display = "block";
         nav_menu_icon.src = "photos/cancel.svg";
@@ -295,6 +316,13 @@ nav_menu_icon.addEventListener("click",()=>{
     }
 })
 
+</script>
+
+/* filter bar for javascript section*/
+<script>
+function toggleFilter(){
+    document.querySelector(".filter-sidebar").classList.toggle("show");
+}
 </script>
 
 </body>
