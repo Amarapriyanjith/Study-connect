@@ -122,7 +122,7 @@ nav ul li a.active{
   padding: 0;
   display: flex;
   align-items: center;
-  color: #666464; /* Matching dark grayish-purple icon color */
+  color: #666464; 
   transition: opacity 0.2s ease;
 }
 

@@ -1,3 +1,20 @@
+@media screen and (max-width: 480px) {
+  
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+ 
+  header {
+    flex-direction: column; 
+    height: auto;           
+    padding: 15px 10px;    
+    gap: 15px;             
+    position: static;      
+  }
+}
+
 *{
     margin:0;
     padding:0;
@@ -96,9 +113,8 @@ nav ul li a.active{
   margin-left:45px;
   display: flex;
   align-items: center;
-  background-color: #d1e5f7; /* Soft lavender/light purple tint */
-  border-radius: 50px;      /* Full pill shape */
-  padding: 8px 20px;
+  background-color: #d1e5f7; 
+  border-radius: 50px;      
   max-width: 450px;
   width: 100%;
 }
@@ -126,7 +142,7 @@ nav ul li a.active{
 
   display: flex;
   align-items: center;
-  color: #666464; /* Matching dark grayish-purple icon color */
+  color: #666464; 
   transition: opacity 0.2s ease;
 }
 
@@ -146,7 +162,7 @@ nav ul li a.active{
 }
 
 .cards{
-    position: relative; /* z-index වැඩ කිරීමට position එකක් තිබිය යුතුය */
+    position: relative; 
     z-index: 10;
     background:#fff;
     border-radius:20px;
@@ -223,13 +239,13 @@ nav ul li a.active{
 .cards:visited {
     color: black;         
 }
-
+/* /*footer bar section* */
 footer{
     background:#1e293b;
     color:white;
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:40px;
+    grid-template-columns: 1fr;
+    gap:25px;
     padding:60px 80px;
 }
 
@@ -242,6 +258,8 @@ footer{
 }
 
 .footer-col a{
+    display: inline-block; 
+    margin: 5px 10px;
     display:block;
     color:#cbd5e1;
     text-decoration:none;
@@ -279,9 +297,8 @@ footer{
 
 
 a {
-    text-decoration: none; /* යටින් ඇති ඉර අයින් කිරීමට */
-    color: inherit;         /* ළඟම ඇති parent element එකේ පාට ලබා ගැනීමට */
-}
+    text-decoration: none; 
+    color: inherit;         
 
 
 
