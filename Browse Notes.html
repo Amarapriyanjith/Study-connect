@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Browse Notes</title>
     <link rel="stylesheet" href="css/browse_note.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 <header>
 
     <div class="logo">
         <img src="photos/graduation-cap.png" alt="logo">
-        <h2>Study Connect</h2>
+        <h2>Student Resource Hub</h2>
     </div>
 
     <nav>
@@ -275,5 +276,26 @@
     </div>
 
 </footer>
+
+<script>
+
+const nav_menu_icon = document.getElementById("menu-icon");
+const navbar_links = document.getElementById("navbar-links");
+
+nav_menu_icon.addEventListener("click",()=>{
+    
+    if(navbar_links.style.display == "block"){
+        navbar_links.style.display = "none";
+        nav_menu_icon.src = "photos/menu.svg";
+    }else{
+        navbar_links.style.display = "block";
+        nav_menu_icon.src = "photos/cancel.svg";
+        nav_menu_icon.style.width = "35px"
+        
+    }
+})
+
+</script>
+
 </body>
 </html>
