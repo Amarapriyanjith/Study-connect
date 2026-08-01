@@ -224,6 +224,7 @@ body{
 .signup a:hover{
     text-decoration:underline;
 }
+
 /* Tablets */
 
 @media(max-width:768px){
