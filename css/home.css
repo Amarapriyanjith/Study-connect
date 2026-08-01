@@ -22,12 +22,10 @@
     font-family:'Poppins',sans-serif;
     }
 
-<<<<<<< HEAD
 
-    /*  navigation bar css */ 
-=======
+
 /*  navigation bar css */ 
->>>>>>> 2db39db37e8d6a25c368c7cd4cefa9b529d0703a
+
 
 .navbar {
   width: 100%;
@@ -452,16 +450,15 @@ a {
 
 
 
-<<<<<<< HEAD
+
 /*  Footer on desktop */
-=======
 
 
 
 
 
 /* ---------- FIX: Footer on desktop (base CSS had 1 column) ---------- */
->>>>>>> 2db39db37e8d6a25c368c7cd4cefa9b529d0703a
+
 footer {
     grid-template-columns: repeat(4, 1fr);
 }
