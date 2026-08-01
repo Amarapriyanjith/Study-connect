@@ -187,13 +187,15 @@ nav ul li a.active{
 }
 
 
-.cards {
-    background: #fff;
-    border-radius: 20px;
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-    transition: 0.3s;
+.cards{
+    position: relative; 
+    z-index: 10;
+    background:#fff;
+    border-radius:20px;
+    padding:40px 30px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    transition:.3s;
 }
 
 .cards:hover {
