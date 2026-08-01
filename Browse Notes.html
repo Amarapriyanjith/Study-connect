@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Notes</title>
+    <link rel="stylesheet" href="css/browse_note.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+<header>
+
+    <div class="logo">
+        <img src="photos/graduation-cap.png" alt="logo">
+        <h2>Student Resource Hub</h2>
+    </div>
+
+    <nav>
+
+        <ul>
+
+            <li><a href="home.html">Home</a></li>
+
+            <li><a  href="features.html">Features</a></li>
+
+            <li><a class="active"href="#">Browse Notes</a></li>
+
+            <li><a href="about us.html">About Us</a></li>
+
+            <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+    <div class="auth-buttons">
+
+    <button class="login-btn"
+      onclick="window.location.href='login page.html'">
+      Login
+    </button>
+
+    <button class="login-btn"
+      onclick="window.location.href='register.html'">
+      Register
+    </button>
+
+    </div>
+
+</header>
+
+
+
+<section>
+        <div class="hero">
+        <h1>Explore Detailed Study Notes</h1>
+        <p class="one">Find the resources you need for your subjects and topics.</p><br>
+
+  <!-- search bar create -->
+  <form class="search-box" action="/search" method="GET">
+  <input 
+    type="search" 
+    name="q" 
+    placeholder="Search for notes, subject, topics..." 
+    aria-label="Search for notes, subject, topics"
+  >
+  <button type="submit" aria-label="Submit Search">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+  </button>
+</form>
+    </div>
+</section>
+
+<div class="filter-main">
+<!-- Make Filter bar -->
+ 
+
+ <aside class="filter-sidebar">
+    <h3 class="filter-title">Filter By</h3>
+
+    <!-- Section 1: Subject -->
+    <div class="filter-group">
+      <div class="filter-header">
+        <span>Subject</span>
+        
+      </div>
+      <div class="filter-content">
+        <label class="checkbox-container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+          Mathematics
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+          Computer Science
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+          Engineering
+        </label>
+      </div>
+    </div>
+
+    <!-- Section 2: Topic -->
+    <div class="filter-group">
+      <div class="filter-header">
+        <span>Topic</span>
+        
+      </div>
+      <div class="filter-content">
+        <label class="checkbox-container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+          Calculus
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+          ML Algorithms
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+          Thermodynamics
+        </label>
+      </div>
+    </div>
+
+    <!-- Section 3: Course Level -->
+    <div class="filter-group">
+      <div class="filter-header">
+        <span>Course Level</span>
+        
+      </div>
+      <div class="filter-content">
+        <label class="checkbox-container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+          Undergrade
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+          Graduated
+        </label>
+      </div>
+    
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+
+
+
+<!-- Subject and note button create section -->
+
+<section class="home">
+    <main class="cards-grid">
+        <div class="cards">
+            <div class="img blue">
+               <img src="photos/maths.png" alt="Maths" width="50px"></a>
+            </div>
+            <a href="pdf/Maths for Technology.pdf"><h2>Mathematics For Technology</h2></a>
+            
+
+         </div>
+
+         <div class="cards">
+            <div class="img yellow">
+                <img src="photos/machine learning.png" alt="Machine Learing" width="50px">
+            </div>
+            <a href="pdf/MachineLearningTomMitchell.pdf"><h2>Machine Learning</h2></a>
+            
+         </div>
+
+         <div class="cards">
+            <div class="img green">
+                <img src="photos/engineering.png" alt="Enginnering" width="50px">
+            </div>
+            <a href="pdf/MECHANICAL ENGINEERS HANDBOOK BY BAN B. MANRGHITU.pdf"><h2>Engineering</h2></a>
+            
+        </div>
+
+        <div class="cards">
+            <div class="img purple">
+                <img src="photos/cyber security.png" alt="User" width="50px">
+            </div>
+            <a href="pdf/Cybersecurity-Handbook-English-version-compressed.pdf"><h2>Cyber Security</h2></a>
+
+            
+            
+   </div>
+   <div class="cards">
+            <div class="img blue">
+                <img src="photos/Calculus.png" alt="User" width="50px">
+            </div>
+            <a href="pdf/ElementaryCalculus.pdf"><h2>Calculus Engineering</h2></a>
+    </div>
+    <div class="cards">
+            <div class="img yellow">
+                <img src="photos/algorithm.png" alt="User" width="50px">
+            </div>
+            <a href="pdf/Algorithms-JeffE.pdf"><h2>ML Algorithms Learning</h2></a>
+    </div>
+    <div class="cards">
+            <div class="img green">
+                <img src="photos/Statistic.png" alt="User" width="50px">
+            </div>
+            <a href="pdf/Statistic.pdf"><h2>Statistic</h2></a>
+    </div>
+    <div class="cards">
+            <div class="img purple">
+                <img src="photos/Reverse Engineering.png" alt="User" width="50px">
+            </div>
+            <a href="pdf/Reverse-Engineering-for-Beginners.pdf"><h2>Reverse Engineering</h2></a>
+    </div>
+            
+
+</main>
+</div>
+<footer>
+
+    <div class="footer-col">
+
+        <h3>Student Resource Hub</h3>
+
+        <p>
+            A platform for students to discover,
+            share and learn from quality resources.
+        </p>
+
+    </div>
+
+
+
+    <div class="footer-col">
+
+        <h3>Quick Links</h3>
+
+        <a href="#">Home</a>
+        <a href="#">Browse Notes</a>
+        <a href="#">Upload Notes</a>
+        <a href="#">About Us</a>
+
+    </div>
+
+
+
+    <div class="footer-col">
+
+        <h3>Categories</h3>
+
+        <a href="#">Computer Science</a>
+        <a href="#">Mathematics</a>
+        <a href="#">Engineering</a>
+        <a href="#">Science</a>
+
+    </div>
+
+
+
+    <div class="footer-col">
+
+        <h3>Newsletter</h3>
+
+        <input type="email" placeholder="Enter your email">
+
+        <button>Subscribe</button>
+
+    </div>
+
+</footer>
+
+<script>
+
+const nav_menu_icon = document.getElementById("menu-icon");
+const navbar_links = document.getElementById("navbar-links");
+
+nav_menu_icon.addEventListener("click",()=>{
+    
+    if(navbar_links.style.display == "block"){
+        navbar_links.style.display = "none";
+        nav_menu_icon.src = "photos/menu.svg";
+    }else{
+        navbar_links.style.display = "block";
+        nav_menu_icon.src = "photos/cancel.svg";
+        nav_menu_icon.style.width = "35px"
+        
+    }
+})
+
+</script>
+
+</body>
+</html>
