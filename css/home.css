@@ -239,13 +239,14 @@ nav ul li a.active{
 .cards:visited {
     color: black;         
 }
-/* /*footer bar section* */
+ /*footer bar section* */
+
 footer{
     background:#1e293b;
     color:white;
     display:grid;
-    grid-template-columns: 1fr;
-    gap:25px;
+    grid-template-columns:repeat(4,1fr);
+    gap:40px;
     padding:60px 80px;
 }
 
@@ -258,8 +259,6 @@ footer{
 }
 
 .footer-col a{
-    display: inline-block; 
-    margin: 5px 10px;
     display:block;
     color:#cbd5e1;
     text-decoration:none;
