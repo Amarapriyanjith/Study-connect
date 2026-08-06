@@ -23,9 +23,7 @@
     }
 
 
-
-/*  navigation bar css */ 
-
+    /*  navigation bar css */ 
 
 .navbar {
   width: 100%;
@@ -450,6 +448,9 @@ a {
 
 
 
+<<<<<<< HEAD
+/*  Footer on desktop */
+=======
 
 /*  Footer on desktop */
 
@@ -459,6 +460,7 @@ a {
 
 /* ---------- FIX: Footer on desktop (base CSS had 1 column) ---------- */
 
+>>>>>>> ab2035bb75335df8c99939e56fb1ac8e9afa336d
 footer {
     grid-template-columns: repeat(4, 1fr);
 }
