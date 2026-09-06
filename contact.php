@@ -1,3 +1,7 @@
+<?php
+session_start(); // Start the session to check if user is logged in
+?>
+
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,23 +25,23 @@
         <div class="navbar-links" id="navbar-links">
           <ul>
             <li>
-              <a href="home.html"
+              <a href="home.php"
                 >Home</a
               >
             </li>
             <li>
-              <a href="features.html"
+              <a href="features.php"
                 >Features</a
               >
             </li>
             
             <li>
-              <a href="Browse Notes.html"
+              <a href="Browse Notes.php"
                 >Browse Notes</a
               >
             </li>
             <li>
-              <a href="about us.html"
+              <a href="about us.php"
                 >About</a
               >
             </li>
@@ -48,8 +52,8 @@
             </li>
           </ul>
           <div class="navbar-buttons">
-            <a href="login page.html"><button id="signup">Login</button></a>
-            <a href="register.html"><button id="login">Register</button></a>
+            <a href="login page.php"><button id="signup">Login</button></a>
+            <a href="register.php"><button id="login">Register</button></a>
           </div>
         </div>
         <div class="menu-icon">
@@ -125,10 +129,10 @@
 
         <h3>Quick Links</h3>
 
-        <a href="home.html">Home</a>
-        <a href="Browse Notes.html">Browse Notes</a>
+        <a href="home.php">Home</a>
+        <a href="Browse Notes.php">Browse Notes</a>
         <a href="#">Upload Notes</a>
-        <a href="about us.html">About Us</a>
+        <a href="about us.php">About Us</a>
 
     </div>
 

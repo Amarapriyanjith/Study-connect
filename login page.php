@@ -1,3 +1,7 @@
+<?php
+session_start(); // Start the session to check if user is logged in
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +21,7 @@
 
         <button class="active">Login</button>
 
-        <button onclick="location.href='register.html'">
+        <button onclick="location.href='register.php'">
             Register
         </button>
 
@@ -103,7 +107,7 @@
 
         Don't have an Account?
 
-        <a href="register.html">
+        <a href="register.php">
             Register
         </a>
 

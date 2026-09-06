@@ -1,3 +1,7 @@
+<?php
+session_start(); // Start the session to check if user is logged in
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,18 +23,18 @@
         <div class="navbar-links" id="navbar-links">
           <ul>
             <li>
-              <a href="home.html"
+              <a href="home.php"
                 >Home</a
               >
             </li>
             <li>
-              <a href="features.html"
+              <a href="features.php"
                 >Features</a
               >
             </li>
             
             <li>
-              <a href="Browse Notes.html"
+              <a href="Browse Notes.php"
                 >Browse Notes</a
               >
             </li>
@@ -40,7 +44,7 @@
               >
             </li>
             <li>
-              <a href="contact.html"
+              <a href="contact.php"
                 >Contact</a
               >
             </li>
@@ -62,7 +66,7 @@
             <p>share and learn together.</p>
 
             <div class="button">
-                <a href="Browse Notes.html" class="btn">Browse Notes</a>
+                <a href="Browse Notes.php" class="btn">Browse Notes</a>
                 <a href="contact.html" class="btn">Contact Us</a>
             </div>
         </div>
@@ -99,7 +103,7 @@
                 educational resources in one place.
             </p>
 
-            <a href="features.html" class="btn">
+            <a href="features.php" class="btn">
                 Explore Resources
             </a>
 
