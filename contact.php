@@ -1,8 +1,80 @@
 <?php
 session_start(); // Start the session to check if user is logged in
+
+require_once 'includes/config.php';
+
+$message_sent = false;
+$error_message = "";
+
+
+// Check whether the form was submitted
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    // Get form data
+    $full_name = trim($_POST["full_name"] ?? "");
+    $email = trim($_POST["email"] ?? "");
+    $subject = trim($_POST["subject"] ?? "");
+    $message = trim($_POST["message"] ?? "");
+
+
+    // Check empty fields
+    if (
+        empty($full_name) ||
+        empty($email) ||
+        empty($subject) ||
+        empty($message)
+    ) {
+
+        $error_message = "Please fill in all fields.";
+
+    }
+
+
+    // Check email
+    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+        $error_message = "Please enter a valid email address.";
+
+    }
+
+
+    // Save message
+    else {
+
+        $sql = $conn->prepare(
+            "INSERT INTO messages
+            (full_name, email, subject, message)
+            VALUES (?, ?, ?, ?)"
+        );
+
+
+        $sql->bind_param(
+            "ssss",
+            $full_name,
+            $email,
+            $subject,
+            $message
+        );
+
+
+        if ($sql->execute()) {
+
+            $message_sent = true;
+
+        } else {
+
+            $error_message = "Message could not be sent.";
+
+        }
+
+
+        $sql->close();
+    }
+}
+
+
 ?>
 
-<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,18 +155,35 @@ session_start(); // Start the session to check if user is logged in
 
  <!--Contavt form section-->
 
+ <?php if ($message_sent): ?>
+
+    <div class="success-message">
+        Message sent successfully!
+    </div>
+
+<?php endif; ?>
+
+
+<?php if (!empty($error_message)): ?>
+
+    <div class="error-message">
+        <?php echo htmlspecialchars($error_message); ?>
+    </div>
+
+<?php endif; ?>
+
 <section class="contact-section">
      <div class="contact-form">
 
         <h2>Send Us a Message</h2>
 
-    <form>
+    <form action="contact.php" method="POST">
 
         <label>Full Name</label>
-        <input type="text" placeholder="Your Name" required>
+        <input type="text" name="full_name" placeholder="Your Name" required>
 
         <label>Email Address</label>
-        <input type="email" placeholder="Enter Your Email" required>
+        <input type="email" name="email" placeholder="Enter Your Email" required>
 
         <label>Subject</label>
         <select required>
@@ -107,7 +196,7 @@ session_start(); // Start the session to check if user is logged in
         </select>
 
         <label>Message</label>
-        <textarea placeholder="Write your message..." required></textarea>
+        <textarea name="message" placeholder="Write your message..." required></textarea>
 
         <button type="submit">Send Message</button>
 
