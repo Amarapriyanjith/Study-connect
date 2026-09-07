@@ -55,10 +55,17 @@ session_start(); // Start the session to check if user is logged in
               >
             </li>
           </ul>
-          <div class="navbar-buttons">
-            <a href="login page.php"><button id="signup">Login</button></a>
-            <a href="register.php"><button id="login">Register</button></a>
-          </div>
+  <div class="navbar-buttons">
+    <?php 
+    if (isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in'] === true): 
+    ?>
+        <a href="account.php"><button id="signup">Account</button></a>
+        <a href="includes/logout.php"><button id="login">Logout</button></a>
+    <?php else: ?>
+        <a href="login page.php"><button id="signup">Login</button></a>
+        <a href="register.php"><button id="login">Register</button></a>
+    <?php endif; ?>
+</div>
         </div>
         <div class="menu-icon">
           <img src="photos/menu.svg" alt="menu" id="menu-icon" />

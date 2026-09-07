@@ -3,7 +3,7 @@ session_start();
 require_once 'config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Match inputs with the names used in your login page.html (uname and pwd)
+    // Match inputs with the names used in your login page.php (uname and pwd)
     $username = trim($_POST['uname']);
     $password = $_POST['pwd'];
 
@@ -23,16 +23,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_id'] = $id;
             $_SESSION['fullname'] = $fullname;
             $_SESSION['username'] = $db_username;
+            $_SESSION['user'] = $db_username;
+            $_SESSION['is_logged_in'] = true;   // <-- add this
 
-            // Redirect directly to your home page without alert
             header("Location: ../home.php");
             exit();
         } else {
-            // Keep alerts for errors so the user knows if the password/username is wrong
+            // Password is wrong
             echo "<script>alert('Invalid Password!'); window.location.href='../login page.php';</script>";
+            exit();
         }
     } else {
+        // No account found with this username
         echo "<script>alert('No account found with this username.'); window.location.href='../login page.php';</script>";
+        exit();
     }
 
     $stmt->close();
