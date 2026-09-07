@@ -59,7 +59,7 @@ session_start(); // Start the session to check if user is logged in
     <?php 
     if (isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in'] === true): 
     ?>
-        <a href="account.php"><button id="signup">Account</button></a>
+        <a href="#"><button id="signup">Account</button></a>
         <a href="includes/logout.php"><button id="login">Logout</button></a>
     <?php else: ?>
         <a href="login page.php"><button id="signup">Login</button></a>

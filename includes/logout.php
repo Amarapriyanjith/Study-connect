@@ -1,9 +1,9 @@
 <?php
 session_start();
-session_unset();     // සියලුම session variables ඉවත් කරයි
-session_destroy();   // session එක සම්පූර්ණයෙන්ම විනාශ කරයි
+session_unset();     // All session variables Remove
+session_destroy();   // session destroy
 
-// Logout වූ පසු home.php වෙත යැවීම
+// Logout and go to homepage
 header("Location: ../home.php");
 exit();
 ?>
