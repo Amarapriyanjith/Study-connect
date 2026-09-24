@@ -29,7 +29,7 @@ session_start(); // Start the session to check if user is logged in
         <div class="navbar-links" id="navbar-links">
           <ul>
             <li>
-              <a  href="#"
+              <a  href="home.php"
                 >Home</a
               >
             </li>
@@ -175,10 +175,10 @@ session_start(); // Start the session to check if user is logged in
 
         <h3>Quick Links</h3>
 
-        <a href="#">Home</a>
-        <a href="#">Browse Notes</a>
-        <a href="#">Upload Notes</a>
-        <a href="#">About Us</a>
+        <a href="home.php">Home</a>
+        <a href="Browse Notes.php">Browse Notes</a>
+        <a href="upload/uploadnotes.php">Upload Notes</a>
+        <a href="about us.php">About Us</a>
 
     </div>
 

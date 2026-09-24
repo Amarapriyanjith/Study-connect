@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactt</title>
+    <title>Contact</title>
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -118,7 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
               >
             </li>
             <li>
-              <a href="#"
+              <a href="contact.php"
                 >Contact</a
               >
             </li>
@@ -153,56 +153,63 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </section>
 
 
- <!--Contavt form section-->
-
- <?php if ($message_sent): ?>
-
-    <div class="success-message">
-        Message sent successfully!
-    </div>
-
-<?php endif; ?>
-
-
-<?php if (!empty($error_message)): ?>
-
-    <div class="error-message">
-        <?php echo htmlspecialchars($error_message); ?>
-    </div>
-
-<?php endif; ?>
+ <!--Contact form section-->
 
 <section class="contact-section">
-     <div class="contact-form">
+
+    <div class="contact-form">
+
+        <?php if ($message_sent): ?>
+            <div class="success-message">
+                <span class="success-icon">✓</span>
+                <span>Message sent successfully!</span>
+            </div>
+        <?php endif; ?>
+
+        <?php if (!empty($error_message)): ?>
+            <div class="error-message">
+                <span class="error-icon">!</span>
+                <span><?php echo htmlspecialchars($error_message); ?></span>
+            </div>
+        <?php endif; ?>
 
         <h2>Send Us a Message</h2>
 
-    <form action="contact.php" method="POST">
+        <form action="contact.php" method="POST">
 
-        <label>Full Name</label>
-        <input type="text" name="full_name" placeholder="Your Name" required>
+            <label>Full Name</label>
+            <input type="text"
+                   name="full_name"
+                   placeholder="Your Name"
+                   required>
 
-        <label>Email Address</label>
-        <input type="email" name="email" placeholder="Enter Your Email" required>
+            <label>Email Address</label>
+            <input type="email"
+                   name="email"
+                   placeholder="Enter Your Email"
+                   required>
 
-        <label>Subject</label>
-        <select required>
-            <option>Programming</option>
-            <option>Mathematics</option>
-            <option>Business</option>
-            <option>Multimedia</option>
-            <option>Networking</option>
-            <option>Database</option>
-        </select>
+            <label>Subject</label>
+            <select name="subject" required>
+                <option value="Programming">Programming</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Business">Business</option>
+                <option value="Multimedia">Multimedia</option>
+                <option value="Networking">Networking</option>
+                <option value="Database">Database</option>
+            </select>
 
-        <label>Message</label>
-        <textarea name="message" placeholder="Write your message..." required></textarea>
+            <label>Message</label>
+            <textarea name="message"
+                      placeholder="Write your message..."
+                      required></textarea>
 
-        <button type="submit">Send Message</button>
+            <button type="submit">Send Message</button>
 
-    </form>
+        </form>
 
     </div>
+
 </section>
 
 <!--Footer-->

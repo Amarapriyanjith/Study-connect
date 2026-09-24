@@ -39,7 +39,7 @@ session_start(); // Start the session to check if user is logged in
               >
             </li>
             <li>
-              <a href="#"
+              <a href="about us.php"
                 >About</a
               >
             </li>

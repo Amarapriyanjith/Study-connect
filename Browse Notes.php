@@ -1,8 +1,25 @@
 <?php
-session_start(); // Start the session to check if user is logged in
+session_start();
+
+require_once 'includes/config.php';
+
+$selected_subject = $_GET['subject'] ?? '';
+
+$result = null;
+
+if (!empty($selected_subject)) {
+
+    $stmt = $conn->prepare(
+        "SELECT * FROM notes WHERE subject = ? ORDER BY id DESC"
+    );
+
+    $stmt->bind_param("s", $selected_subject);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+}
 ?>
 
-<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +46,7 @@ session_start(); // Start the session to check if user is logged in
         <div class="navbar-links" id="navbar-links">
           <ul>
             <li>
-              <a href="home.html"
+              <a href="home.php"
                 >Home</a
               >
             </li>
@@ -40,7 +57,7 @@ session_start(); // Start the session to check if user is logged in
             </li>
             
             <li>
-              <a href="#"
+              <a href="Browse Notes.php"
                 >Browse Notes</a
               >
             </li>
@@ -195,67 +212,186 @@ session_start(); // Start the session to check if user is logged in
 <section class="home">
     <main class="cards-grid">
         <div class="cards">
-            <div class="img blue">
-               <img src="photos/maths.png" alt="Maths" width="50px"></a>
-            </div>
-            <a href="#"><h2>Mathematics</h2></a>
-            
-
-         </div>
-
-         <div class="cards">
-            <div class="img yellow">
-                <img src="photos/web-programming.png" alt="Programming" width="50px">
-            </div>
-            <a href="#"><h2>Programming</h2></a>
-            
-         </div>
-
-         <div class="cards">
-            <div class="img green">
-                <img src="photos/business.png" alt="Business" width="50px">
-            </div>
-            <a href="#"><h2>Business</h2></a>
-            
+          <div class="img blue">
+              <img src="photos/maths.png" alt="Maths" width="50px">
+          </div>
+          <a href="Browse Notes.php?subject=Mathematics">
+              <h2>Mathematics</h2>
+          </a>
         </div>
 
-        <div class="cards">
-            <div class="img purple">
-                <img src="photos/multi media.png" alt="Multimedia" width="50px">
-            </div>
-            <a href="#"><h2>Multi media</h2></a>
+      <div class="cards">
+          <div class="img yellow">
+              <img src="photos/web-programming.png" alt="Programming" width="50px">
+          </div>
+          <a href="Browse Notes.php?subject=Programming">
+              <h2>Programming</h2>
+          </a>
+      </div>
 
-            
-            
-   </div>
-   <div class="cards">
-            <div class="img blue">
-                <img src="photos/networking.png" alt="User" width="50px">
-            </div>
-            <a href="#"><h2>Networking</h2></a>
-    </div>
-    <div class="cards">
-            <div class="img yellow">
-                <img src="photos/database-file.png" alt="User" width="50px">
-            </div>
-            <a href="#"><h2>Database</h2></a>
-    </div>
-    <div class="cards">
-            <div class="img green">
-                <img src="photos/Statistic.png" alt="User" width="50px">
-            </div>
-            <a href="#"><h2>Statistic</h2></a>
-    </div>
-    <div class="cards">
-            <div class="img purple">
-                <img src="photos/Reverse Engineering.png" alt="User" width="50px">
-            </div>
-            <a href="#"><h2>Reverse Engineering</h2></a>
-    </div>
+      <div class="cards">
+          <div class="img green">
+              <img src="photos/business.png" alt="Business" width="50px">
+          </div>
+          <a href="Browse Notes.php?subject=Business">
+              <h2>Business</h2>
+          </a>
+      </div>
+
+      <div class="cards">
+          <div class="img purple">
+              <img src="photos/multi media.png" alt="Multimedia" width="50px">
+          </div>
+          <a href="Browse Notes.php?subject=Multimedia">
+              <h2>Multimedia</h2>
+          </a>
+      </div>
+
+      <div class="cards">
+          <div class="img blue">
+              <img src="photos/networking.png" alt="Networking" width="50px">
+          </div>
+          <a href="Browse Notes.php?subject=Networking">
+              <h2>Networking</h2>
+          </a>
+      </div>
+
+      <div class="cards">
+          <div class="img yellow">
+              <img src="photos/database-file.png" alt="Database" width="50px">
+          </div>
+          <a href="Browse Notes.php?subject=Database">
+              <h2>Database</h2>
+          </a>
+      </div>
+
+      <div class="cards">
+          <div class="img green">
+              <img src="photos/Statistic.png" alt="Statistics" width="50px">
+          </div>
+          <a href="Browse Notes.php?subject=Statistics">
+              <h2>Statistics</h2>
+          </a>
+      </div>
+
+      <div class="cards">
+          <div class="img purple">
+              <img src="photos/Reverse Engineering.png" alt="Reverse Engineering" width="50px">
+          </div>
+          <a href="Browse Notes.php?subject=Reverse Engineering">
+              <h2>Reverse Engineering</h2>
+          </a>
+      </div>
             
 
 </main>
 </div>
+</section>
+
+<!-- Latest Study Notes -->
+<?php if (!empty($selected_subject)): ?>
+
+    <section class="latest-notes">
+
+        <div class="latest-container">
+
+            <h2>Latest Study Notes</h2>
+
+            <p>
+                Latest notes for
+                <strong><?php echo htmlspecialchars($selected_subject); ?></strong>
+            </p>
+
+            <div class="notes-grid">
+
+                <?php if ($result && $result->num_rows > 0): ?>
+
+                    <?php while ($note = $result->fetch_assoc()): ?>
+
+                        <div class="note-card">
+
+                            <h3>
+                                <?php echo htmlspecialchars($note['title']); ?>
+                            </h3>
+
+                            <p>
+                                <?php echo htmlspecialchars($note['subject']); ?>
+                            </p>
+
+                            <p>
+                                <?php echo htmlspecialchars($note['topic']); ?>
+                            </p>
+
+                            <span>
+                                <?php echo htmlspecialchars($note['course_level']); ?>
+                            </span>
+
+                            <br><br>
+
+                            <a
+                                href="upload/uploads/<?php echo htmlspecialchars($note['file_name']); ?>"
+                                target="_blank"
+                                class="view-note-btn"
+                            >
+                                View PDF →
+                            </a>
+
+                        </div>
+
+                    <?php endwhile; ?>
+
+                <?php else: ?>
+
+                    <p>
+                        No study notes available for
+                        <?php echo htmlspecialchars($selected_subject); ?>.
+                    </p>
+
+                <?php endif; ?>
+
+            </div>
+
+        </div>
+
+    </section>
+
+<?php endif; ?>
+
+<!-- Upload Notes Section -->
+<section class="upload-notes-section">
+
+    <div class="upload-notes-content">
+
+        <div class="upload-notes-icon">
+            📚
+        </div>
+
+        <div class="upload-notes-text">
+            <h2>Share Your Study Notes</h2>
+
+            <p>
+                Help other students by sharing your useful study materials
+                and notes with the Student Resource Hub community.
+            </p>
+
+            <div class="upload-notes-features">
+                <span>✓ Easy to Upload</span>
+                <span>✓ Share with Students</span>
+                <span>✓ PDF Support</span>
+            </div>
+        </div>
+
+        <div class="upload-notes-button">
+            <a href="upload/uploadnotes.php">
+                <button>
+                    Upload Notes
+                    <span>→</span>
+                </button>
+            </a>
+        </div>
+
+    </div>
+
 </section>
 
 
