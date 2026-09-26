@@ -1,0 +1,478 @@
+/*ALL NOTES PAGE*/
+
+.all-notes-section {
+    min-height: 70vh;
+    padding: 70px 8%;
+    background: #f5f8fc;
+}
+
+.all-notes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/*BACK BUTTON*/
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-bottom: 30px;
+
+    color: #1769ff;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    color: #0b4dcc;
+    transform: translateX(-3px);
+}
+
+
+/*PAGE HEADER*/
+
+.all-notes-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.all-notes-header h1 {
+    margin: 0 0 12px;
+
+    color: #101828;
+
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.all-notes-header p {
+    margin: 0;
+
+    color: #667085;
+
+    font-size: 16px;
+}
+
+.all-notes-header strong {
+    color: #1769ff;
+}
+
+
+/*NOTES GRID*/
+
+.notes-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+
+/*NOTE CARD*/
+
+.note-card {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 300px;
+
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e7ecf3;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 18px rgba(16, 24, 40, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.note-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px rgba(16, 24, 40, 0.10);
+}
+
+
+/* PDF ICON*/
+
+.pdf-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 50px;
+
+    margin-bottom: 18px;
+
+    background: #f1f5ff;
+
+    border-radius: 12px;
+
+    font-size: 25px;
+}
+
+
+/*NOTE TITLE*/
+
+.note-card h3 {
+    margin: 0 0 10px;
+
+    color: #101828;
+
+    font-size: 19px;
+    line-height: 1.4;
+}
+
+
+/*SUBJECT*/
+
+.note-subject {
+    margin: 0 0 10px;
+
+    color: #1769ff;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/*TOPIC*/
+
+.note-topic {
+    margin: 0 0 14px;
+
+    color: #667085;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/*COURSE LEVEL*/
+
+.note-level {
+    display: inline-block;
+
+    align-self: flex-start;
+
+    padding: 6px 10px;
+
+    background: #f0f4ff;
+
+    color: #1769ff;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/*DESCRIPTION */
+
+.note-description {
+    margin-top: 15px;
+
+    color: #667085;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+/*VIEW PDF BUTTON*/
+
+.view-note-btn {
+    display: block;
+
+    margin-top: auto;
+    padding: 11px 16px;
+
+    background: #1769ff;
+
+    color: #ffffff;
+
+    text-align: center;
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.view-note-btn:hover {
+    background: #0b4dcc;
+
+    transform: translateY(-2px);
+}
+
+
+/*NO NOTES*/
+
+.no-notes {
+    max-width: 600px;
+
+    margin: 50px auto;
+
+    padding: 60px 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #e7ecf3;
+
+    border-radius: 16px;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 18px rgba(16, 24, 40, 0.05);
+}
+
+.no-notes-icon {
+    margin-bottom: 15px;
+
+    font-size: 45px;
+}
+
+.no-notes h2 {
+    margin-bottom: 10px;
+
+    color: #101828;
+
+    font-size: 24px;
+}
+
+.no-notes p {
+    margin-bottom: 25px;
+
+    color: #667085;
+
+    font-size: 15px;
+}
+
+
+/*BACK TO BROWSE BUTTON*/
+
+.back-to-browse {
+    display: inline-block;
+
+    padding: 11px 20px;
+
+    background: #1769ff;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.back-to-browse:hover {
+    background: #0b4dcc;
+}
+
+/*PAGINATION*/
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 40px 0 20px;
+    flex-wrap: wrap;
+}
+
+.page-number,
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 42px;
+    height: 42px;
+
+    padding: 0 14px;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #1769ff;
+
+    border: 1px solid #dbe4f0;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: all 0.2s ease;
+}
+
+.page-number:hover,
+.page-btn:hover {
+    background: #1769ff;
+    color: #ffffff;
+    border-color: #1769ff;
+}
+
+.page-number.active {
+    background: #1769ff;
+    color: #ffffff;
+    border-color: #1769ff;
+}
+
+.page-btn {
+    padding: 0 18px;
+}
+
+
+/* No notes message */
+
+.no-notes {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    border: 1px solid #e7ecf3;
+}
+
+.no-notes h3 {
+    margin: 0 0 10px;
+
+    color: #101828;
+
+    font-size: 20px;
+}
+
+.no-notes p {
+    margin: 0;
+
+    color: #667085;
+
+    font-size: 14px;
+}
+
+/*TABLET*/
+
+@media (max-width: 1100px) {
+
+    .notes-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+
+/*SMALL TABLET*/
+
+@media (max-width: 850px) {
+
+    .all-notes-section {
+        padding: 60px 5%;
+    }
+
+    .notes-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .all-notes-header h1 {
+        font-size: 32px;
+    }
+
+}
+
+
+/*MOBILE*/
+
+@media (max-width: 600px) {
+
+    .all-notes-section {
+        padding: 45px 20px;
+    }
+
+    .all-notes-header {
+        margin-bottom: 30px;
+    }
+
+    .all-notes-header h1 {
+        font-size: 28px;
+    }
+
+    .all-notes-header p {
+        font-size: 14px;
+    }
+
+    .notes-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .note-card {
+        min-height: 280px;
+
+        padding: 20px;
+    }
+
+    .back-btn {
+        margin-bottom: 25px;
+    }
+
+        .pagination {
+        gap: 6px;
+        margin-top: 30px;
+    }
+
+    .page-number,
+    .page-btn {
+        min-width: 38px;
+        height: 38px;
+
+        padding: 0 10px;
+
+        font-size: 13px;
+    }
+
+}

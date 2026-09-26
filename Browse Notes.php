@@ -2,22 +2,66 @@
 session_start();
 
 require_once 'includes/config.php';
+$uploadSuccess = isset($_GET['upload']) && $_GET['upload'] === 'success';
 
+/* Search */
+$search = trim($_GET['q'] ?? '');
+
+/* Filters */
 $selected_subject = $_GET['subject'] ?? '';
+$selected_level = $_GET['course_level'] ?? '';
 
-$result = null;
+/* Base query */
+$sql = "SELECT * FROM notes WHERE 1=1";
 
+$params = [];
+$types = "";
+
+/* Search */
+if (!empty($search)) {
+
+    $sql .= " AND (title LIKE ? OR subject LIKE ? OR topic LIKE ?)";
+
+    $searchTerm = "%" . $search . "%";
+
+    $params[] = $searchTerm;
+    $params[] = $searchTerm;
+    $params[] = $searchTerm;
+
+    $types .= "sss";
+}
+
+/* Subject filter */
 if (!empty($selected_subject)) {
 
-    $stmt = $conn->prepare(
-        "SELECT * FROM notes WHERE subject = ? ORDER BY id DESC"
-    );
+    $sql .= " AND subject = ?";
 
-    $stmt->bind_param("s", $selected_subject);
-    $stmt->execute();
+    $params[] = $selected_subject;
 
-    $result = $stmt->get_result();
+    $types .= "s";
 }
+
+/* Course level filter */
+if (!empty($selected_level)) {
+
+    $sql .= " AND course_level = ?";
+
+    $params[] = $selected_level;
+
+    $types .= "s";
+}
+
+$sql .= " ORDER BY id DESC";
+
+$stmt = $conn->prepare($sql);
+
+if (!empty($params)) {
+    $stmt->bind_param($types, ...$params);
+}
+
+$stmt->execute();
+
+$result = $stmt->get_result();
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +86,7 @@ if (!empty($selected_subject)) {
         <div class="logo">
         <img src="photos/graduation-cap.png" alt="logo">
         <h2>Student Resource Hub</h2>
-    </div>
+        </div>
         <div class="navbar-links" id="navbar-links">
           <ul>
             <li>
@@ -72,7 +116,7 @@ if (!empty($selected_subject)) {
               >
             </li>
           </ul>
-  <div class="navbar-buttons">
+    <div class="navbar-buttons">
     <?php 
     if (isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in'] === true): 
     ?>
@@ -82,7 +126,7 @@ if (!empty($selected_subject)) {
         <a href="login page.php"><button id="signup">Login</button></a>
         <a href="register.php"><button id="login">Register</button></a>
     <?php endif; ?>
-</div>
+    </div>
         </div>
         <div class="menu-icon">
           <img src="photos/menu.svg" alt="menu" id="menu-icon" />
@@ -100,7 +144,7 @@ if (!empty($selected_subject)) {
 
 
   <!-- search bar create -->
-  <form class="search-box" action="/search" method="GET">
+  <form class="search-box" action="Browse Notes.php" method="GET">
   <input 
     type="search" 
     name="q" 
@@ -127,85 +171,201 @@ if (!empty($selected_subject)) {
  <aside class="filter-sidebar">
     <h3 class="filter-title">Filter By</h3>
 
-    <!-- Section 1: Subject -->
-    <div class="filter-group">
-      <div class="filter-header">
+<!-- Section 1: Subject -->
+<div class="filter-group">
+    <div class="filter-header">
         <span>Subject</span>
-      </div>
-
-      <div class="filter-content">
-        <label class="checkbox-container">
-          <input type="checkbox">
-          <span class="checkmark"></span>
-          Mathematics
-        </label>
-
-        <label class="checkbox-container">
-          <input type="checkbox">
-          <span class="checkmark"></span>
-          Computer Science
-        </label>
-
-        <label class="checkbox-container">
-          <input type="checkbox">
-          <span class="checkmark"></span>
-          Engineering
-        </label>
-      </div>
     </div>
 
-    <!-- Section 2: Topic -->
-    <div class="filter-group">
-      <div class="filter-header">
-        <span>Topic</span>
-        
-      </div>
-      <div class="filter-content">
+    <div class="filter-content">
+
         <label class="checkbox-container">
-          <input type="checkbox">
-          <span class="checkmark"></span>
-          Calculus
+            <input 
+                type="checkbox"
+                onclick="filterSubject('Mathematics')"
+                <?php echo ($selected_subject === 'Mathematics') ? 'checked' : ''; ?>
+            >
+            <span class="checkmark"></span>
+            Mathematics
         </label>
 
         <label class="checkbox-container">
-          <input type="checkbox">
-          <span class="checkmark"></span>
-          ML Algorithms
+            <input 
+                type="checkbox"
+                onclick="filterSubject('Programming')"
+                <?php echo ($selected_subject === 'Programming') ? 'checked' : ''; ?>
+            >
+            <span class="checkmark"></span>
+            Programming
         </label>
 
         <label class="checkbox-container">
-          <input type="checkbox">
-          <span class="checkmark"></span>
-          Thermodynamics
+            <input 
+                type="checkbox"
+                onclick="filterSubject('Business')"
+                <?php echo ($selected_subject === 'Business') ? 'checked' : ''; ?>
+            >
+            <span class="checkmark"></span>
+            Business
         </label>
-      </div>
+
+        <label class="checkbox-container">
+            <input 
+                type="checkbox"
+                onclick="filterSubject('Multimedia')"
+                <?php echo ($selected_subject === 'Multimedia') ? 'checked' : ''; ?>
+            >
+            <span class="checkmark"></span>
+            Multimedia
+        </label>
+
+        <label class="checkbox-container">
+            <input 
+                type="checkbox"
+                onclick="filterSubject('Networking')"
+                <?php echo ($selected_subject === 'Networking') ? 'checked' : ''; ?>
+            >
+            <span class="checkmark"></span>
+            Networking
+        </label>
+
+        <label class="checkbox-container">
+            <input 
+                type="checkbox"
+                onclick="filterSubject('Database')"
+                <?php echo ($selected_subject === 'Database') ? 'checked' : ''; ?>
+            >
+            <span class="checkmark"></span>
+            Database
+        </label>
+
+        <label class="checkbox-container">
+            <input 
+                type="checkbox"
+                onclick="filterSubject('Statistics')"
+                <?php echo ($selected_subject === 'Statistics') ? 'checked' : ''; ?>
+            >
+            Statistics
+        </label>
+
+        <label class="checkbox-container">
+            <input 
+                type="checkbox"
+                onclick="filterSubject('Reverse Engineering')"
+                <?php echo ($selected_subject === 'Reverse Engineering') ? 'checked' : ''; ?>
+            >
+            Reverse Engineering
+        </label>
+
     </div>
+</div>
 
-    <!-- Section 3: Course Level -->
-        <div class="filter-group">
-        <div class="filter-header">
+<!-- Section 2: Course Level -->
+<div class="filter-group">
+
+    <div class="filter-header">
         <span>Course Level</span>
-        
-        </div>
-        <div class="filter-content">
-        <label class="checkbox-container">
-          <input type="checkbox">
-          <span class="checkmark"></span>
-          Undergrade
-        </label>
-        <label class="checkbox-container">
-          <input type="checkbox">
-          <span class="checkmark"></span>
-          Graduated
-        </label>
-      </div>
-    
     </div>
-  </aside>
 
+    <div class="filter-content">
 
+        <label class="checkbox-container">
+            <input
+                type="checkbox"
+                onclick="filterLevel('Undergraduate')"
+                <?php echo ($selected_level === 'Undergraduate') ? 'checked' : ''; ?>
+            >
+            <span class="checkmark"></span>
+            Undergraduate
+        </label>
 
+        <label class="checkbox-container">
+            <input
+                type="checkbox"
+                onclick="filterLevel('Graduate')"
+                <?php echo ($selected_level === 'Graduate') ? 'checked' : ''; ?>
+            >
+            <span class="checkmark"></span>
+            Graduate
+        </label>
 
+    </div>
+
+</div>
+        <a href="Browse Notes.php" class="clear-filter">Clear Filters</a>
+</aside>
+
+<?php if (!empty($search)): ?>
+
+    <?php if ($uploadSuccess): ?>
+
+    <div class="upload-success-message">
+        Note uploaded successfully!
+    </div>
+
+<?php endif; ?>
+
+    <!-- Search Results -->
+    <section class="search-results-section">
+
+        <h2>Search Results</h2>
+
+        <div class="notes-grid">
+
+            <?php if ($result->num_rows > 0): ?>
+
+            <?php while ($row = $result->fetch_assoc()): ?>
+
+                <div class="note-card">
+
+                    <h3>
+                        <?php echo htmlspecialchars($row['title']); ?>
+                    </h3>
+
+                    <p>
+                        <strong>Subject:</strong>
+                        <?php echo htmlspecialchars($row['subject']); ?>
+                    </p>
+
+                    <p>
+                        <strong>Topic:</strong>
+                        <?php echo htmlspecialchars($row['topic']); ?>
+                    </p>
+
+                    <p>
+                        <strong>Level:</strong>
+                        <?php echo htmlspecialchars($row['course_level']); ?>
+                    </p>
+
+                    <a
+                        href="upload/uploads/<?php echo htmlspecialchars($row['file_name']); ?>"
+                        target="_blank"
+                        class="view-pdf-btn"
+                    >
+                        View PDF →
+                    </a>
+
+                </div>
+
+            <?php endwhile; ?>
+
+            <?php else: ?>
+
+                <div class="no-results">
+                    <h3>No notes found</h3>
+                    <p>
+                        No notes matched your search.
+                        Try another title, subject, or topic.
+                    </p>
+                </div>
+
+            <?php endif; ?>
+
+        </div>
+
+    </section>
+
+<?php else: ?>
 
 <!-- Subject and note button create section -->
 
@@ -288,6 +448,9 @@ if (!empty($selected_subject)) {
 </div>
 </section>
 
+<?php endif; ?>
+</div>
+
 <!-- Latest Study Notes -->
 <?php if (!empty($selected_subject)): ?>
 
@@ -350,6 +513,15 @@ if (!empty($selected_subject)) {
                 <?php endif; ?>
 
             </div>
+
+                 <div class="view-all-container">
+                     <a href="all notes.php?subject=<?php echo urlencode($selected_subject); ?>" class="view-all-btn">
+                        View All <?php echo htmlspecialchars($selected_subject); ?> Notes →
+                     </a>
+                 </div>
+            
+            
+            
 
         </div>
 
@@ -473,6 +645,24 @@ nav_menu_icon.addEventListener("click",()=>{
 <script>
 function toggleFilter(){
     document.querySelector(".filter-sidebar").classList.toggle("show");
+}
+
+function filterSubject(subject) {
+    const url = new URL(window.location.href);
+
+    url.searchParams.set("subject", subject);
+    url.searchParams.delete("topic");
+    url.searchParams.delete("course_level");
+
+    window.location.href = url.toString();
+}
+
+function filterLevel(level) {
+    const url = new URL(window.location.href);
+
+    url.searchParams.set("course_level", level);
+
+    window.location.href = url.toString();
 }
 </script>
 

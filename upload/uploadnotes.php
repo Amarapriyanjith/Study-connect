@@ -106,24 +106,27 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         $user_id
                     );
 
-                    /* Execute database query */
-                    if ($sql->execute()) {
+                /* Execute database query */
+                if ($sql->execute()) {
 
-                        $message = "Note uploaded successfully!";
-                        $message_type = "success";
+                    /* Send user to Browse Notes page after successful upload */
+                    header(
+                        "Location: ../Browse Notes.php?subject=" . urlencode($subject) . "&upload=success"
+                    );
+                    exit();
 
-                    } else {
+                } else {
 
-                        $message = "Could not save note information.";
-                        $message_type = "error";
+                    $message = "Could not save note information.";
+                    $message_type = "error";
 
-                        /* Delete file if database insertion fails */
-                        if (file_exists($upload_path)) {
-                            unlink($upload_path);
-                        }
+                    /* Delete file if database insertion fails */
+                    if (file_exists($upload_path)) {
+                        unlink($upload_path);
                     }
+                }
 
-                    $sql->close();
+                $sql->close();
                 }
 
             } else {
@@ -135,6 +138,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -173,26 +177,67 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <ul>
 
                 <li>
-                    <a href="home.php">Home</a>
+                    <a href="../home.php">Home</a>
                 </li>
 
                 <li>
-                    <a href="features.php">Features</a>
+                    <a href="../features.php">Features</a>
                 </li>
 
                 <li>
-                    <a href="Browse Notes.php">Browse Notes</a>
+                    <a href="../Browse Notes.php">Browse Notes</a>
                 </li>
 
                 <li>
-                    <a href="about us.php">About</a>
+                    <a href="../about us.php">About</a>
                 </li>
 
                 <li>
-                    <a href="contact.php">Contact</a>
+                    <a href="../contact.php">Contact</a>
                 </li>
 
             </ul>
+
+             <!-- Login / Account buttons -->
+
+            <div class="navbar-buttons">
+
+                <?php
+                if (
+                    isset($_SESSION['is_logged_in']) &&
+                    $_SESSION['is_logged_in'] === true
+                ):
+                ?>
+
+                    <a href="#">
+                        <button id="signup">
+                            Account
+                        </button>
+                    </a>
+
+                    <a href="../includes/logout.php">
+                        <button id="login">
+                            Logout
+                        </button>
+                    </a>
+
+                <?php else: ?>
+
+                    <a href="login page.php">
+                        <button id="signup">
+                            Login
+                        </button>
+                    </a>
+
+                    <a href="register.php">
+                        <button id="login">
+                            Register
+                        </button>
+                    </a>
+
+                <?php endif; ?>
+
+            </div>
 
         </div>
 
@@ -376,6 +421,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
 
 </section>
+
+<script>
+
+const nav_menu_icon = document.getElementById("menu-icon");
+const navbar_links = document.getElementById("navbar-links");
+
+nav_menu_icon.addEventListener("click",()=>{
+    
+    if(navbar_links.style.display == "block"){
+        navbar_links.style.display = "none";
+        nav_menu_icon.src = "photos/menu.svg";
+    }else{
+        navbar_links.style.display = "block";
+        nav_menu_icon.src = "photos/cancel.svg";
+        nav_menu_icon.style.width = "35px"
+        
+    }
+})
+
+</script>
 
 <script>
     const fileInput = document.getElementById("note_file");
