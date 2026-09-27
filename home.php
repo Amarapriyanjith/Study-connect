@@ -59,7 +59,7 @@ session_start(); // Start the session to check if user is logged in
     <?php 
     if (isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in'] === true): 
     ?>
-        <a href="#"><button id="signup">Account</button></a>
+        <a href="account.php"><button id="signup">Account</button></a>
         <a href="includes/logout.php"><button id="login">Logout</button></a>
     <?php else: ?>
         <a href="login page.php"><button id="signup">Login</button></a>
@@ -77,21 +77,6 @@ session_start(); // Start the session to check if user is logged in
         <h1>All The Resources<br>You Need to Succeed</h1>
         <p class="one">Upload ,discover and share study notes with students like you.</p><br>
 
-  <!-- search bar create -->
-  <form class="search-box" action="/search" method="GET">
-  <input 
-    type="search" 
-    name="q" 
-    placeholder="Search for notes, subject, topics..." 
-    aria-label="Search for notes, subject, topics"
-  >
-  <button type="submit" aria-label="Submit Search">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="11" cy="11" r="8"></circle>
-      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-    </svg>
-  </button>
-</form>
     </div>
 </section>
 

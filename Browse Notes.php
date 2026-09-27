@@ -17,37 +17,42 @@ $sql = "SELECT * FROM notes WHERE 1=1";
 $params = [];
 $types = "";
 
-/* Search */
-if (!empty($search)) {
+/* Search and Filters */
 
-    $sql .= " AND (title LIKE ? OR subject LIKE ? OR topic LIKE ?)";
-
-    $searchTerm = "%" . $search . "%";
-
-    $params[] = $searchTerm;
-    $params[] = $searchTerm;
-    $params[] = $searchTerm;
-
-    $types .= "sss";
-}
-
-/* Subject filter */
+/*If a subject filter is selected,show notes from that subject.The search text is ignored when
+ * a subject filter is active.
+ */
 if (!empty($selected_subject)) {
 
     $sql .= " AND subject = ?";
 
     $params[] = $selected_subject;
-
     $types .= "s";
+
+} else {
+
+    /* No subject filter selected.Search title, subject and topic.*/
+    if (!empty($search)) {
+
+        $sql .= " AND (title LIKE ? OR subject LIKE ? OR topic LIKE ?)";
+
+        $searchTerm = "%" . $search . "%";
+
+        $params[] = $searchTerm;
+        $params[] = $searchTerm;
+        $params[] = $searchTerm;
+
+        $types .= "sss";
+    }
 }
 
 /* Course level filter */
+
 if (!empty($selected_level)) {
 
     $sql .= " AND course_level = ?";
 
     $params[] = $selected_level;
-
     $types .= "s";
 }
 
@@ -120,7 +125,7 @@ $result = $stmt->get_result();
     <?php 
     if (isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in'] === true): 
     ?>
-        <a href="#"><button id="signup">Account</button></a>
+        <a href="account.php"><button id="signup">Account</button></a>
         <a href="includes/logout.php"><button id="login">Logout</button></a>
     <?php else: ?>
         <a href="login page.php"><button id="signup">Login</button></a>
@@ -295,7 +300,7 @@ $result = $stmt->get_result();
         <a href="Browse Notes.php" class="clear-filter">Clear Filters</a>
 </aside>
 
-<?php if (!empty($search)): ?>
+<?php if (!empty($search) || !empty($selected_subject) || !empty($selected_level)): ?>
 
     <?php if ($uploadSuccess): ?>
 

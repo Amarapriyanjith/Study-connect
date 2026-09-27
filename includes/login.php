@@ -8,13 +8,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['pwd'];
 
     // Search by username
-    $stmt = $conn->prepare("SELECT id, fullname, username, password FROM users WHERE username = ?");
+    $stmt = $conn->prepare("SELECT id, fullname, email, username, password FROM users WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->store_result();
 
     if ($stmt->num_rows == 1) {
-        $stmt->bind_result($id, $fullname, $db_username, $hashed_password);
+        $stmt->bind_result($id, $fullname, $email, $db_username, $hashed_password);
         $stmt->fetch();
 
         // Verify password securely
@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Set session variables
             $_SESSION['user_id'] = $id;
             $_SESSION['fullname'] = $fullname;
+            $_SESSION['email'] = $email;
             $_SESSION['username'] = $db_username;
             $_SESSION['user'] = $db_username;
             $_SESSION['is_logged_in'] = true;   // <-- add this

@@ -209,7 +209,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 ):
                 ?>
 
-                    <a href="#">
+                    <a href="account.php">
                         <button id="signup">
                             Account
                         </button>

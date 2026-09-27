@@ -158,7 +158,7 @@ $result = $stmt->get_result();
                 ):
                 ?>
 
-                    <a href="#">
+                    <a href="account.php">
                         <button id="signup">
                             Account
                         </button>

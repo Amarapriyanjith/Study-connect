@@ -54,7 +54,7 @@ session_start(); // Start the session to check if user is logged in
     <?php 
     if (isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in'] === true): 
     ?>
-        <a href="#"><button id="signup">Account</button></a>
+        <a href="account.php"><button id="signup">Account</button></a>
         <a href="includes/logout.php"><button id="login">Logout</button></a>
     <?php else: ?>
         <a href="login page.php"><button id="signup">Login</button></a>
@@ -75,7 +75,7 @@ session_start(); // Start the session to check if user is logged in
 
             <div class="button">
                 <a href="Browse Notes.php" class="btn">Browse Notes</a>
-                <a href="contact.html" class="btn">Contact Us</a>
+                <a href="contact.php" class="btn">Contact Us</a>
             </div>
         </div>
         
@@ -226,17 +226,7 @@ session_start(); // Start the session to check if user is logged in
         </div>
 
 </section>
-<section class="cta">
 
-    <h2>Join Our Learning Community</h2>
-
-    <p>
-        Start exploring resources, upload your notes, and learn together.
-    </p>
-
-    <a href="#" class="btn">Get Started</a>
-
-</section>
 <footer>
 
     <div class="footer-col">

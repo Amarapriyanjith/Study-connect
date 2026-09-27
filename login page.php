@@ -75,32 +75,6 @@ session_start(); // Start the session to check if user is logged in
 
     <!-- Divider -->
 
-    <div class="divider">
-        <span>or continue with</span>
-    </div>
-
-    <!-- Social Login -->
-
-    <div class="social-login">
-
-        <button class="google">
-
-            <img src="photos/googlr.png" alt="google">
-
-            Google
-
-        </button>
-
-        <button class="facebook">
-
-            <img src="photos/facebook.png" alt="facebook">
-
-            Facebook
-
-        </button>
-
-    </div>
-
     <!-- Register -->
 
     <p class="signup">

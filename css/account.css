@@ -1,0 +1,394 @@
+.account-container {
+    min-height: 100vh;
+    background: #f4f8ff;
+    padding: 45px 20px 70px;
+}
+
+.account-container h1 {
+    text-align: center;
+    color: #102a43;
+    font-size: 32px;
+    margin: 0 0 28px;
+}
+
+.account-card {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(16, 42, 67, 0.08);
+}
+
+/* Profile Section */
+
+.profile-section {
+    padding: 35px 40px;
+    border-right: 1px solid #e5eaf0;
+}
+
+.profile-icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #eaf2ff;
+    font-size: 32px;
+}
+
+.profile-section h2 {
+    text-align: center;
+    color: #102a43;
+    font-size: 22px;
+    margin: 15px 0 28px;
+}
+
+.profile-details {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.profile-info {
+    margin-top: 10px;
+}
+
+.profile-row {
+    display: grid;
+    grid-template-columns: 95px 1fr;
+    padding: 13px 0;
+    border-bottom: 1px solid #e5eaf0;
+    font-size: 14px;
+    }
+
+.profile-row {
+    display: grid;
+    grid-template-columns: 95px 1fr;
+    padding: 13px 0;
+    border-bottom: 1px solid #e5eaf0;
+    font-size: 14px;
+    }
+
+.profile-row strong {
+    color: #102a43;
+}
+
+.profile-row span {
+    color: #52667a;
+}
+
+.edit-profile-btn {
+    display: block;
+    width: fit-content;
+    margin: 25px auto 0;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 7px;
+    background: #1769ff;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.edit-profile-btn:hover {
+    background: #0b4dcc;
+}
+
+/* Change Password Section */
+
+.change-password-section {
+    padding: 35px 40px;
+}
+
+.change-password-section h2 {
+    color: #102a43;
+    font-size: 22px;
+    margin: 15px 0 25px;
+}
+
+.change-password-section form {
+    width: 100%;
+}
+
+.change-password-section label {
+    display: block;
+    margin-bottom: 7px;
+    color: #102a43;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.change-password-section input[type="password"] {
+    width: 100%;
+    height: 40px;
+    padding: 0 12px;
+    margin-bottom: 17px;
+    border: 1px solid #ccd6e0;
+    border-radius: 6px;
+    background: #ffffff;
+    font-size: 14px;
+    outline: none;
+}
+
+.change-password-section input[type="password"]:focus {
+    border-color: #1769ff;
+    box-shadow: 0 0 0 3px rgba(23, 105, 255, 0.10);
+}
+
+.change-password-section button {
+    width: 100%;
+    height: 42px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 7px;
+    background: #1769ff;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.change-password-section button:hover {
+    background: #0b4dcc;
+}
+
+.change-password-section button:active {
+    transform: scale(0.98);
+}
+
+/*MY UPLOADED NOTES*/
+
+.my-notes-section {
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+.my-notes-section h2 {
+    text-align: center;
+    color: #101828;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.my-notes-subtitle {
+    text-align: center;
+    color: #667085;
+    margin-bottom: 30px;
+}
+
+/* Notes Grid */
+.my-notes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* Individual Note Card */
+.my-note-card {
+    background: #ffffff;
+    border: 1px solid #e7ecf3;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 8px 25px rgba(16, 24, 40, 0.06);
+    transition: 0.3s ease;
+}
+
+.my-note-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(16, 24, 40, 0.10);
+}
+
+/* Note Icon */
+.note-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    background: #eef4ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+/* Note Title */
+.my-note-card h3 {
+    color: #101828;
+    font-size: 20px;
+    margin: 0 0 15px;
+}
+
+/* Note Details */
+.my-note-card p {
+    color: #667085;
+    font-size: 14px;
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.my-note-card p strong {
+    color: #101828;
+}
+
+/* Description */
+.note-description {
+    margin-top: 15px !important;
+    padding-top: 15px;
+    border-top: 1px solid #e7ecf3;
+}
+
+/* View / Download Button */
+.note-button {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 10px 18px;
+    background: #1769ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.note-button:hover {
+    background: #0b4dcc;
+}
+
+/* No Notes Message */
+.no-notes {
+    text-align: center;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    color: #667085;
+    border: 1px solid #e7ecf3;
+}
+
+/* Note action buttons */
+
+.note-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+    align-items: center;
+}
+
+.note-actions .note-button {
+    margin-top: 0;
+}
+
+.delete-note-button {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #fff;
+    color: #d92d20;
+    border: 1px solid #f04438;
+    text-decoration: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.delete-note-button:hover {
+    background: #d92d20;
+    color: #fff;
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+
+    .account-container {
+        padding: 30px 15px 50px;
+    }
+
+    .account-container h1 {
+        font-size: 28px;
+        margin-bottom: 22px;
+    }
+
+    .account-card {
+        grid-template-columns: 1fr;
+        max-width: 550px;
+    }
+
+    .profile-section {
+        border-right: none;
+        border-bottom: 1px solid #e5eaf0;
+        padding: 30px 25px;
+    }
+
+    .change-password-section {
+        padding: 30px 25px;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+    .account-container {
+        padding: 25px 12px 40px;
+    }
+
+    .account-container h1 {
+        font-size: 25px;
+    }
+
+    .profile-section,
+    .change-password-section {
+        padding: 25px 20px;
+    }
+
+    .profile-row {
+        grid-template-columns: 85px 1fr;
+        font-size: 13px;
+    }
+
+    .profile-name {
+        font-size: 19px;
+    }
+
+    .profile-section h2,
+    .change-password-section h2 {
+        font-size: 20px;
+    }
+
+    .profile-icon {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+@media (max-width: 900px) {
+    .my-notes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .my-notes-section {
+        width: 92%;
+    }
+
+    .my-notes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .my-notes-section h2 {
+        font-size: 24px;
+    }
+}
