@@ -85,7 +85,7 @@ session_start(); // Start the session to check if user is logged in
             <div class="img blue">
                 <img src="photos/maths.png" alt="Maths" width="50px">
             </div>
-            <a href="#"><h2>Mathematics</h2></a>
+            <h2>Mathematics</h2>
             
 
          </div>
@@ -94,7 +94,7 @@ session_start(); // Start the session to check if user is logged in
             <div class="img yellow">
                 <img src="photos/web-programming.png" alt="Programming" width="50px">
             </div>
-            <a href="#"><h2>Programming</h2></a>
+            <h2>Programming</h2>
             
          </div>
 
@@ -102,7 +102,7 @@ session_start(); // Start the session to check if user is logged in
             <div class="img green">
                 <img src="photos/business.png" alt="Business" width="50px">
             </div>
-            <a href="#"><h2>Business</h2></a>
+            <h2>Business</h2>
             
         </div>
 
@@ -110,7 +110,7 @@ session_start(); // Start the session to check if user is logged in
             <div class="img purple">
                 <img src="photos/multi media.png" alt="Multimedia" width="50px">
             </div>
-            <a href="#"><h2>Multimedia</h2></a>
+            <h2>Multimedia</h2>
 
             
             
@@ -119,25 +119,25 @@ session_start(); // Start the session to check if user is logged in
             <div class="img blue">
                 <img src="photos/networking.png" alt="Networking" width="50px">
             </div>
-            <a href="#"><h2>Networking</h2></a>
+            <h2>Networking</h2>
     </div>
     <div class="cards">
             <div class="img yellow">
                 <img src="photos/database-file.png" alt="Database" width="50px">
             </div>
-            <a href="#"><h2>Database</h2></a>
+            <h2>Database</h2>
     </div>
     <div class="cards">
             <div class="img green">
                 <img src="photos/Statistic.png" alt="User" width="50px">
             </div>
-            <a href="#"><h2>Statistic</h2></a>
+            <h2>Statistic</h2>
     </div>
     <div class="cards">
             <div class="img purple">
                 <img src="photos/Reverse Engineering.png" alt="User" width="50px">
             </div>
-            <a href="#"><h2>Reverse Engineering</h2></a>
+            <h2>Reverse Engineering</h2>
     </div>
             
 </section>
@@ -173,10 +173,21 @@ session_start(); // Start the session to check if user is logged in
 
         <h3>Categories</h3>
 
-        <a href="#">Computer Science</a>
-        <a href="#">Mathematics</a>
-        <a href="#">Engineering</a>
-        <a href="#">Science</a>
+        <a href="Browse Notes.php?subject=Computer Science">
+            Computer Science
+        </a>
+
+        <a href="Browse Notes.php?subject=Mathematics">
+            Mathematics
+        </a>
+
+        <a href="Browse Notes.php?subject=Engineering">
+            Engineering
+        </a>
+
+        <a href="Browse Notes.php?subject=Science">
+            Science
+        </a>
 
     </div>
 

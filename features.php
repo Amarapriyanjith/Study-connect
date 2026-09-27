@@ -127,10 +127,10 @@ session_start(); // Start the session to check if user is logged in
 
       <h3>Quick Links</h3>
 
-      <a href="home.php">Home</a>
-      <a href="Browse Notes.php">Browse Notes</a>
-      <a href="#">Upload Notes</a>
-      <a href="about us.php">About Us</a>
+        <a href="home.php">Home</a>
+        <a href="Browse Notes.php">Browse Notes</a>
+        <a href="uploadnotes.php">Upload Notes</a>
+        <a href="about us.php">About Us</a>
 
     </div>
 
@@ -140,10 +140,21 @@ session_start(); // Start the session to check if user is logged in
 
       <h3>Categories</h3>
 
-      <a href="#">Computer Science</a>
-      <a href="#">Mathematics</a>
-      <a href="#">Engineering</a>
-      <a href="#">Science</a>
+        <a href="Browse Notes.php?subject=Computer Science">
+            Computer Science
+        </a>
+
+        <a href="Browse Notes.php?subject=Mathematics">
+            Mathematics
+        </a>
+
+        <a href="Browse Notes.php?subject=Engineering">
+            Engineering
+        </a>
+
+        <a href="Browse Notes.php?subject=Science">
+            Science
+        </a>
 
     </div>
 
